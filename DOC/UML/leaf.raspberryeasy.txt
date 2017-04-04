@@ -1,0 +1,48 @@
+@startuml
+== Sending data ==
+group Ideal
+ Leaf -> Raspberry: Temperature
+ Leaf -> Raspberry: Humidity
+ Leaf -> Raspberry: RSSIpi
+ Leaf -> Leaf:Switch to RX
+ Leaf -> Leaf:Start responce timer
+ Leaf <-- Raspberry: RSSIleaf(CONF)
+ Leaf -> Leaf:Radio to sleep
+ Leaf -> Leaf:Go to sleep
+  note left 
+           when sleep timer 
+           generates interrupt
+ end note
+end
+
+group Sending Failure
+ Leaf -> Raspberry: Temperature
+ Leaf -x Raspberry: Humidity
+ Leaf -> Raspberry: RSSIpi
+ Leaf -> Leaf:Switch to RX
+ Leaf -> Leaf:Start responce timer
+ Leaf <-- Raspberry: RSSIleaf(CONF)
+ Leaf -> Leaf:Radio to sleep
+ Leaf -> Leaf:Go to sleep
+ note left 
+           when sleep timer 
+           generates interrupt
+ end note
+end
+
+group Responce Failure
+ Leaf -> Raspberry: Temperature
+ Leaf -> Raspberry: Humidity
+ Leaf -> Raspberry: RSSIpi
+ Leaf -> Leaf:Switch to RX
+ Leaf -> Leaf:Start responce timer
+ Leaf x-- Raspberry: RSSIleaf(CONF)
+...Responce timer period...
+ Leaf -> Leaf:Radio to sleep
+ Leaf -> Leaf:Go to sleep
+ note left 
+           when sleep timer 
+           generates interrupt
+ end note
+end
+@enduml

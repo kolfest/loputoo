@@ -1,0 +1,66 @@
+//vana
+@startuml
+Applikatsioon-> M_sensor: Küsi niiskust
+note left 
+Niiskuse küsimine 
+M_sensor moodulilt
+end note
+M_sensor -> M_sensor: Käivita sensor
+M_sensor -> ADC: Seadista muundur
+ADC->ADC_DTC: Seadista
+note right 
+seab mõõtmiste
+arvu ning käivitab 
+mällu viimise
+kontrollib ega muundur ei tööta
+end note
+M_sensor -> ADC: Käivita muundur
+== Kordus ==
+M_sensor -> ADC: Alusta mõõtmist
+note right 
+mõõtmisi korratakse
+nii kaua kuni 
+ADC_DTC seadistuses 
+ette nähtud
+end note
+ADC_DTC->ADC_DTC: Vii tulemus mällu
+== Korduse lõpp ==
+M_sensor -> ADC: Peata muundur 
+M_sensor -> M_sensor: Lülita sensor välja
+M_sensor -> M_sensor: Arvuta lõplik tulemus/arvuta mõõtmise viga
+Applikatsioon<-- M_sensor: Tagasta niiskus
+@enduml
+
+
+//uuem
+@startuml
+Applikatsioon->ADC_FSM:Küsi olek
+note left 
+Detailsem
+Temperatuuri, patarei
+ning niiskuse mõõtmine
+end note
+Applikatsioon<--ADC_FSM:Tagasta olek
+Applikatsioon->ADC_FSM:Seadista ADC
+Applikatsioon->ADC_FSM:Mõõda
+ADC_FSM->ADC_FSM:Uuenda olekut
+ADC_FSM->ADC_HW:Seadista ADC
+ADC_FSM->ADC_HW:Käivitia ADC
+== Kordus ==
+ADC_FSM->ADC_HW:Tee mõõtmine
+note right 
+mõõtmisi korratakse
+nii kaua kuni 
+ADC_HW seadistuses 
+ette nähtud
+end note
+Applikatsioon->ADC_FSM:Küsi andmete olek
+Applikatsioon<--ADC_FSM:Tagasta andmete olek
+ADC_HW<--ADC_HW:Tulemus mällu
+== Korduse lõpp ==
+ADC_FSM<--ADC_HW:Mõõtmine lõppenud
+ADC_FSM->ADC_FSM: Arvuta lõplik tulemus + viga
+ADC_FSM->ADC_FSM: Uuenda andmete olekut
+Applikatsioon->ADC_FSM:Küsi tulemus
+Applikatsioon<--ADC_FSM:Tagasta tulemus
+@enduml

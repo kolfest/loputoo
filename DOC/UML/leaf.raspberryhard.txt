@@ -1,0 +1,60 @@
+@startuml
+== Creating connection ==
+group Ideal
+ Leaf -> Raspberry: Connection Request(ACK/SYC)
+ Leaf ->Leaf: start responce timer
+ Leaf ->Leaf:number of tries +1
+ Leaf <-- Raspberry: RSSIleaf
+end
+
+group Failure
+  == Repetition ==
+  Leaf x-- Raspberry: RSSIleaf
+  ...Responce timer period...
+  Leaf -> Raspberry: Connection Request(ACK/SYC)
+  Leaf ->Leaf:number of tries +1
+  note left 
+  try till
+  certain number retries 
+  are reached
+  end note
+  == Repetition ==
+  Leaf <-- Raspberry: RSSIleaf
+end
+
+== Sending data ==
+group Ideal
+ Leaf -> Raspberry: Temperature
+ Leaf -> Raspberry: Humidity
+ Leaf -> Raspberry: RSSIpi
+ Leaf -> Leaf:Switch to RX
+ Leaf -> Leaf:Start responce timer
+ Leaf <-- Raspberry: RSSIleaf(CONF)
+ Leaf -> Leaf:Go to sleep
+end
+
+group Sending Failure
+ Leaf -> Raspberry: Temperature
+ Leaf -x Raspberry: Humidity
+ Leaf -> Raspberry: RSSIpi
+ Leaf -> Leaf:Switch to RX
+ Leaf -> Leaf:Start responce timer
+ Leaf <-- Raspberry: empty package with Humidity header
+ Raspberry <- Raspberry:Start responce timer
+ Leaf -> Leaf:Switch to TX
+ Leaf -> Raspberry: Humidity
+ Leaf <-- Raspberry: RSSIleaf(CONF)
+ Leaf -> Leaf:Go to sleep
+end
+
+group Responce Failure
+ Leaf -> Raspberry: Temperature
+ Leaf -> Raspberry: Humidity
+ Leaf -> Raspberry: RSSIpi
+ Leaf -> Leaf:Switch to RX
+ Leaf -> Leaf:Start responce timer
+ Leaf x-- Raspberry: RSSIleaf(CONF)
+...Responce timer period...
+ Leaf -> Leaf:Go to sleep
+end
+@enduml

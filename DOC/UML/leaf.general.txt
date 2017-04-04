@@ -1,0 +1,38 @@
+@startuml
+==Mõõtmine==
+Applikatsioon->ADC_FSM:Küsi olek
+
+note left
+Algab MCU ärkamisel
+Mõõdetakse niiskus
+patarei tase
+ning temperatuur
+end note
+
+Applikatsioon<--ADC_FSM:Tagasta olek
+Applikatsioon->ADC_FSM:Seadista ADC
+Applikatsioon->ADC_FSM:Mõõda
+Applikatsioon->ADC_FSM:Küsi andmete olek
+Applikatsioon<--ADC_FSM:Tagasta andmete olek
+Applikatsioon->ADC_FSM:Küsi tulemus
+Applikatsioon<--ADC_FSM:Tagasta tulemus
+==Saatmine==
+Applikatsioon->Applikatsioon: Loo paketid
+Applikatsioon->Applikatsioon: Paketid järjekorda
+Applikatsioon->MRF: Ärata RF
+Applikatsioon->MRF: Seadista RF
+==Kordus1==
+Applikatsioon->MRF: Saada pakett
+==Kordus2==
+Applikatsioon->MRF: Küsi olek
+Applikatsioon<--MRF: Tagasta olek
+==Kordus2 lõpp==
+Applikatsioon->Applikatsioon: Uuenda järjekorda
+==Kordus1 lõpp==
+Applikatsioon->MRF: RF Standby
+Applikatsioon->Applikatsioon: MCU magama
+note left
+Puudu suhtlus-
+protokolli täitmine
+end note
+@enduml

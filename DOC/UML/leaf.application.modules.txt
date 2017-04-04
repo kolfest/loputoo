@@ -1,0 +1,23 @@
+//Yldine
+
+
+
+// Niiskus sensorilt
+@startuml
+Applikatsioon-> M_sensor: Küsi niiskust
+note left 
+Niiskuse küsimine 
+M_sensor moodulilt
+end note
+M_sensor -> M_sensor: Käivita sensor
+M_sensor -> ADC: Seadista muundur
+M_sensor -> ADC: Käivita muundur
+== Kordus ==
+M_sensor -> ADC: Alusta mõõtmist
+M_sensor <-- ADC: Tagasta mõõtetulemus
+== Korduse lõpp ==
+M_sensor -> ADC: Peata muundur 
+M_sensor -> M_sensor: Lülita sensor välja
+M_sensor -> M_sensor: Kalibreeri mõõtmine/arvuta mõõtmise viga
+Applikatsioon<-- M_sensor: Tagasta niiskus
+@enduml

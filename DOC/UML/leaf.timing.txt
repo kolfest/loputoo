@@ -1,0 +1,32 @@
+@startuml
+robust "Analog-to-Digital on" as ADC
+robust "Internal refrence on" as REF
+robust "Sampling start" as SHI
+robust "Sampling in progress" as SAMPCON
+
+
+@SHI
+0 is 0
+
+@ADC
+0 is 1
+
+@SAMPCON
+0 is 0
+
+@REF
+0 is 1
+
+
+@0
+
+@10
+REF is 0
+SHI->REF: Start
+
+@40
+SHI is 1
+SHI->REF: End
+
+SHI@10 <-> @40 : {trefon=30us}
+@enduml
