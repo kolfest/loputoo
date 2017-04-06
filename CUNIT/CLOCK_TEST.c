@@ -4,8 +4,15 @@
  *  Created on: 3. apr 2017
  *      Author: Karl
  */
-#include "CLOCK_TEST.h"
 
+#include "clock.h"
+#include "CUnit/Basic.h"
+uint16 E_DCOCTL = 0xC0;
+uint16 E_BCSCTL1 = 0x86;
+uint16 E_BCSCTL2 = 0x00;
+uint16 E_BCSCTL3 = 0x05;
+uint16 E_SR = 0x0080;
+uint16 E_IFG1 = 0x00; /* reset with PUC */
 
 void
 test_initClk (void)

@@ -5,15 +5,14 @@
  *      Author: Karl
  */
 
-#include "CUnit.h"
+#include "CUnit/Basic.h"
 
 /* The main() function for setting up and running the tests.
  * Returns a CUE_SUCCESS on successful running, another
  * CUnit error code on failure.
  */
 
-#include "FSM_TEST.h"
-
+#include "ADC_TEST.h"
 int main()
 {
   CU_pSuite pSuite = NULL;
@@ -23,7 +22,7 @@ int main()
     return CU_get_error ();
 
   /* add a suite to the registry */
-  pSuite = CU_add_suite ("Suite_1", init_FSMsuite, clean_FSMsuite);
+  pSuite = CU_add_suite ("Suite_1", init_ADCsuite, clean_ADCsuite);
 
   if (NULL == pSuite)
     {
@@ -33,7 +32,7 @@ int main()
 
   /* add the tests to the suite */
   /* NOTE - ORDER IS IMPORTANT - MUST TEST fread() AFTER fprintf() */
-  if ((NULL == CU_add_test (pSuite, "test of FSM", test_ADC_configureADC )))
+  if ((NULL == CU_add_test (pSuite, "test of ADC",  test_ADC_configureADC)))
     {
       CU_cleanup_registry ();
       return CU_get_error ();

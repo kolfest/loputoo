@@ -11,6 +11,10 @@
 #include "device.h"
 #include "CUnit/Basic.h"
 
+/*expected register values */
+
+
+
 void
 test_initClk(void);
 int

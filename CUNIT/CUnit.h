@@ -11,6 +11,6 @@
 #include <stdio.h>
 #include <string.h>
 #include "CUnit/Basic.h"
-
+#include "system.h"
 
 #endif /* CUNIT_H_ */

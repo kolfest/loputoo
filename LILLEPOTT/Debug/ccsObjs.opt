@@ -1,0 +1,1 @@
+"./ADC.obj" "./FSM.obj" "./application.obj" "./clock.obj" "./device.obj" "./gpio.obj" "./main.obj" "./timer.obj" "./watchdog.obj" "../lnk_msp430g2553.cmd" -llibc.a 

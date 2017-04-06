@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>CUnits</name>
+	<name>CUNIT</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -23,10 +23,101 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>ADC.c</name>
+			<type>1</type>
+			<locationURI>PROJECT_LILLEPOTT/ADC.c</locationURI>
+		</link>
+		<link>
+			<name>ADC.h</name>
+			<type>1</type>
+			<locationURI>PROJECT_LILLEPOTT/ADC.h</locationURI>
+		</link>
+		<link>
+			<name>FSM.c</name>
+			<type>1</type>
+			<locationURI>PROJECT_LILLEPOTT/FSM.c</locationURI>
+		</link>
+		<link>
+			<name>FSM.h</name>
+			<type>1</type>
+			<locationURI>PROJECT_LILLEPOTT/FSM.h</locationURI>
+		</link>
+		<link>
+			<name>application.c</name>
+			<type>1</type>
+			<locationURI>PROJECT_LILLEPOTT/application.c</locationURI>
+		</link>
+		<link>
+			<name>application.h</name>
+			<type>1</type>
+			<locationURI>PROJECT_LILLEPOTT/application.h</locationURI>
+		</link>
+		<link>
+			<name>clock.c</name>
+			<type>1</type>
+			<locationURI>PROJECT_LILLEPOTT/clock.c</locationURI>
+		</link>
+		<link>
+			<name>clock.h</name>
+			<type>1</type>
+			<locationURI>PROJECT_LILLEPOTT/clock.h</locationURI>
+		</link>
+		<link>
+			<name>device.c</name>
+			<type>1</type>
+			<locationURI>PROJECT_LILLEPOTT/device.c</locationURI>
+		</link>
+		<link>
+			<name>device.h</name>
+			<type>1</type>
+			<locationURI>PROJECT_LILLEPOTT/device.h</locationURI>
+		</link>
+		<link>
+			<name>gpio.c</name>
+			<type>1</type>
+			<locationURI>PROJECT_LILLEPOTT/gpio.c</locationURI>
+		</link>
+		<link>
+			<name>gpio.h</name>
+			<type>1</type>
+			<locationURI>PROJECT_LILLEPOTT/gpio.h</locationURI>
+		</link>
+		<link>
+			<name>system.h</name>
+			<type>1</type>
+			<locationURI>PROJECT_LILLEPOTT/system.h</locationURI>
+		</link>
+		<link>
+			<name>timer.c</name>
+			<type>1</type>
+			<locationURI>PROJECT_LILLEPOTT/timer.c</locationURI>
+		</link>
+		<link>
+			<name>timer.h</name>
+			<type>1</type>
+			<locationURI>PROJECT_LILLEPOTT/timer.h</locationURI>
+		</link>
+		<link>
+			<name>watchdog.c</name>
+			<type>1</type>
+			<locationURI>PROJECT_LILLEPOTT/watchdog.c</locationURI>
+		</link>
+		<link>
+			<name>watchdog.h</name>
+			<type>1</type>
+			<locationURI>PROJECT_LILLEPOTT/watchdog.h</locationURI>
+		</link>
+	</linkedResources>
 	<variableList>
 		<variable>
-			<name>PROJECT_ADC</name>
-			<value>file:/C:/Users/Karl/workspace_v6_2/ADC</value>
+			<name>GIT</name>
+			<value>file:/C:/git/loputoo</value>
+		</variable>
+		<variable>
+			<name>PROJECT_LILLEPOTT</name>
+			<value>file:/C:/Users/Karl/workspace_v6_2/LILLEPOTT</value>
 		</variable>
 	</variableList>
 </projectDescription>
