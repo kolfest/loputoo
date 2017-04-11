@@ -7,7 +7,7 @@
 
 #ifndef SYSTEM_H_
 #define SYSTEM_H_
-#define TEST
+//#define TEST
 
 #ifdef TEST
 #include "device.h"
@@ -22,5 +22,7 @@ typedef unsigned char  uint8;
 typedef signed long    int32;
 typedef signed short   int16;
 typedef signed char    int8;
+
+
 
 #endif /* SYSTEM_H_ */

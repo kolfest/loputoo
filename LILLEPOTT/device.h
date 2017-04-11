@@ -18,7 +18,7 @@ typedef signed long    int32;
 typedef signed short   int16;
 typedef signed char    int8;
 
-/*
+
 #define BIT0                   (0x0001)
 #define BIT1                   (0x0002)
 #define BIT2                   (0x0004)
@@ -36,7 +36,6 @@ typedef signed char    int8;
 #define BITE                   (0x4000)
 #define BITF                   (0x8000)
 
-*/
 /* system registers */
 
 /* BCS+ */
@@ -56,6 +55,8 @@ uint16 ADC10CTL0;
 uint16 ADC10CTL1;
 
 /* TIMER */
+uint16 TA0CTL;
+uint16 TA0CCR0;
 
 
 /* system configuration bits */
@@ -64,8 +65,10 @@ uint16 ADC10CTL1;
 #define CALBC1_1MHZ (0x86)
 #define CALDCO_1MHZ (0xC0)
 #define SELM_0 (0x00)
+#define SELS_0 (0x00)
 #define LFXT1S_0 (0x00)
 #define DIVA_0 (0x00)
+#define DIVS_3 (0x06)
 
 /* ADC */
 #define SREF_1 		(1*0x2000u)
@@ -75,6 +78,12 @@ uint16 ADC10CTL1;
 #define ADC10DIV_0	(0*0x20u)
 #define INCH_11		(11*0x1000u)
 #define INCH_10		(10*0x1000u)
+#define DIVS_0                 (0x00)         /* SMCLK Divider 0: /1 */
+#define DIVM_3                 (0x30)         /* MCLK Divider 3: /8 */
+#define ENC                    (0x002)        /* ADC10 Enable Conversion */
+#define ADC10SC                (0x001)        /* ADC10 Start Conversion */
+#define ADC10BUSY              (0x0001)       /* ADC10 BUSY */
+
 
 /* WDT */
 #define WDTIE                  (0x01)
@@ -88,6 +97,13 @@ uint16 ADC10CTL1;
 #define WDTNMIES               (0x0040)
 #define WDTHOLD                (0x0080)
 #define WDT_ADLY_1000       (WDTPW+WDTTMSEL+WDTCNTCL+WDTSSEL)
+
+/*timer */
+#define CCIE                   (0x0010)       /* Capture/compare interrupt enable */
+#define CCR0                   TACCR0         /* Timer A Capture/Compare 0 */
+#define TACCR0                 TA0CCR0        /* Timer A Capture/Compare 0 */
+#define TACTL                  TA0CTL         /* Timer A Control */
+
 
 /*
  * Stub for register setting

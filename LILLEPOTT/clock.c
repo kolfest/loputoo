@@ -3,9 +3,10 @@
  *
  *  Created on: 18. märts 2017
  *      Author: Karl
+ *      TODO: interface for SMCLK enable/disable?
  */
 
-#define DEBUG 0
+//#define DEBUG
 
 #ifdef DEBUG
 unsigned char CAL_DATA[8];
@@ -25,14 +26,15 @@ initClk ()
   IFG1 &= ~OFIFG;
   //_bis_SR_register(SCG1); /* turn off SMCLK */
 
-  /* MCLK configuration */
 
+  /* Setting up DCO */
 #ifdef DEBUG
   /* get calibration constants from segmentA */
   j = 0;
   CAL_DATA[j++] = DCOCTL;
   CAL_DATA[j++] = BCSCTL1;
 #endif
+
   BCSCTL1 = CALBC1_1MHZ; /* DCO calibration */
   DCOCTL = CALDCO_1MHZ; /* DCO calibration */
 
@@ -42,11 +44,16 @@ initClk ()
   CAL_DATA[j++] = BCSCTL1;
 #endif
 
-  BCSCTL2 |= SELM_0; /* MCLK sourced by DCO at 1Mhz*/
+  /* MCLK configuration */
+  BCSCTL2 |= SELM_0 + DIVM_0;  /* MCLK sourced by DCO at 125kHz*/
 
   /* ACLK configuration */
   BCSCTL3 |= LFXT1S_0; /* 32768-Hz on LFXT1 */
   BCSCTL1 |= DIVA_0;
+
+  /* SMCLK configuration */
+  BCSCTL2 |= DIVS_0; /* SMCLK sourced by DCO(default) at 1MHz (1us interval)*/
+
   //BCSCTL1 &= ~(1<<6);
 
 }

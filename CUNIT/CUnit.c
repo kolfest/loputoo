@@ -32,7 +32,7 @@ int main()
 
   /* add the tests to the suite */
   /* NOTE - ORDER IS IMPORTANT - MUST TEST fread() AFTER fprintf() */
-  if ((NULL == CU_add_test (pSuite, "test of ADC",  test_ADC_configureADC)))
+  if ((NULL == CU_add_test (pSuite, "test of ADC",  test_ADC_measure)))
     {
       CU_cleanup_registry ();
       return CU_get_error ();

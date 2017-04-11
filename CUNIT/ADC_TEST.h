@@ -11,7 +11,12 @@
 void
 test_ADC_configureADC ();
 
+void
+test_ADC_measure();
 
+
+void
+test_ADC_startConversion();
 
 int
 init_ADCsuite (void);
@@ -19,6 +24,7 @@ init_ADCsuite (void);
 int
 clean_ADCsuite (void);
 
-
+void
+test_checkIsBitSet();
 
 #endif /* ADC_TEST_H_ */
