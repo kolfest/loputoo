@@ -6,7 +6,7 @@
  *      TODO: interface for SMCLK enable/disable?
  */
 
-//#define DEBUG
+#define DEBUG
 
 #ifdef DEBUG
 unsigned char CAL_DATA[8];
@@ -26,7 +26,6 @@ initClk ()
   IFG1 &= ~OFIFG;
   //_bis_SR_register(SCG1); /* turn off SMCLK */
 
-
   /* Setting up DCO */
 #ifdef DEBUG
   /* get calibration constants from segmentA */
@@ -45,15 +44,20 @@ initClk ()
 #endif
 
   /* MCLK configuration */
-  BCSCTL2 |= SELM_0 + DIVM_0;  /* MCLK sourced by DCO at 125kHz*/
+  BCSCTL2 |= SELM_0 + DIVM_0;  /* MCLK sourced by DCO at 1Mhz*/
 
   /* ACLK configuration */
-  BCSCTL3 |= LFXT1S_0; /* 32768-Hz on LFXT1 */
+  BCSCTL3 |= LFXT1S_2;
+
   BCSCTL1 |= DIVA_0;
 
   /* SMCLK configuration */
   BCSCTL2 |= DIVS_0; /* SMCLK sourced by DCO(default) at 1MHz (1us interval)*/
 
+  #ifdef DEBUG
+  CAL_DATA[j++] = BCSCTL3;
+  CAL_DATA[j++] = BCSCTL2;
+#endif
   //BCSCTL1 &= ~(1<<6);
 
 }

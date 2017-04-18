@@ -46,13 +46,14 @@ extern uint16 BCSCTL2; /* = 0x00; */
 extern uint16 BCSCTL3; /*= 0x05;*/
 extern uint16 SR; /*= 0x00;*/
 extern uint16 IFG1; /*= 0x02; *//* reset with PUC */
+extern uint16 ADC10MEM;
 
 /* WDT */
 extern uint32 WDTCTL; /* WDTCTL = 0x6900; */
 
 /* ADC */
-uint16 ADC10CTL0;
-uint16 ADC10CTL1;
+extern uint16 ADC10CTL0;
+extern uint16 ADC10CTL1;
 
 /* TIMER */
 uint16 TA0CTL;
@@ -69,6 +70,7 @@ uint16 TA0CCR0;
 #define LFXT1S_0 (0x00)
 #define DIVA_0 (0x00)
 #define DIVS_3 (0x06)
+#define LFXT1S_2               (0x20)         /* Mode 2 for LFXT1 : VLO */
 
 /* ADC */
 #define SREF_1 		(1*0x2000u)
@@ -80,9 +82,11 @@ uint16 TA0CCR0;
 #define INCH_10		(10*0x1000u)
 #define DIVS_0                 (0x00)         /* SMCLK Divider 0: /1 */
 #define DIVM_3                 (0x30)         /* MCLK Divider 3: /8 */
+#define DIVM_0                 (0x30)
 #define ENC                    (0x002)        /* ADC10 Enable Conversion */
 #define ADC10SC                (0x001)        /* ADC10 Start Conversion */
 #define ADC10BUSY              (0x0001)       /* ADC10 BUSY */
+#define ADC10ON                (0x010)        /* ADC10 On/Enable */
 
 
 /* WDT */

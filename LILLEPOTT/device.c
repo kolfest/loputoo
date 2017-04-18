@@ -14,6 +14,10 @@ uint16 BCSCTL2  = 0x00;
 uint16 BCSCTL3 = 0x05;
 uint16 SR = 0x00;
 uint16 IFG1 = 0x02; /* reset with PUC */
+uint16 ADC10MEM = 0x00;
+uint16 ADC10CTL1 = 0x00;
+uint16 ADC10CTL0 = 0x00;
+
 
 void _bis_SR_register_double( uint16 SCG1)
 {

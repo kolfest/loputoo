@@ -14,6 +14,8 @@ C_SRCS += \
 ../device.c \
 ../gpio.c \
 ../main.c \
+../misc.c \
+../system.c \
 ../timer.c \
 ../watchdog.c 
 
@@ -25,6 +27,8 @@ OBJS += \
 ./device.obj \
 ./gpio.obj \
 ./main.obj \
+./misc.obj \
+./system.obj \
 ./timer.obj \
 ./watchdog.obj 
 
@@ -36,6 +40,8 @@ C_DEPS += \
 ./device.d \
 ./gpio.d \
 ./main.d \
+./misc.d \
+./system.d \
 ./timer.d \
 ./watchdog.d 
 
@@ -47,6 +53,8 @@ C_DEPS__QUOTED += \
 "device.d" \
 "gpio.d" \
 "main.d" \
+"misc.d" \
+"system.d" \
 "timer.d" \
 "watchdog.d" 
 
@@ -58,6 +66,8 @@ OBJS__QUOTED += \
 "device.obj" \
 "gpio.obj" \
 "main.obj" \
+"misc.obj" \
+"system.obj" \
 "timer.obj" \
 "watchdog.obj" 
 
@@ -69,6 +79,8 @@ C_SRCS__QUOTED += \
 "../device.c" \
 "../gpio.c" \
 "../main.c" \
+"../misc.c" \
+"../system.c" \
 "../timer.c" \
 "../watchdog.c" 
 

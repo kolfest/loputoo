@@ -17,6 +17,8 @@ ORDERED_OBJS += \
 "./device.obj" \
 "./gpio.obj" \
 "./main.obj" \
+"./misc.obj" \
+"./system.obj" \
 "./timer.obj" \
 "./watchdog.obj" \
 "../lnk_msp430g2553.cmd" \
@@ -160,8 +162,8 @@ LILLEPOTT.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "ADC.d" "FSM.d" "application.d" "clock.d" "device.d" "gpio.d" "main.d" "timer.d" "watchdog.d" 
-	-$(RM) "ADC.obj" "FSM.obj" "application.obj" "clock.obj" "device.obj" "gpio.obj" "main.obj" "timer.obj" "watchdog.obj" 
+	-$(RM) "ADC.d" "FSM.d" "application.d" "clock.d" "device.d" "gpio.d" "main.d" "misc.d" "system.d" "timer.d" "watchdog.d" 
+	-$(RM) "ADC.obj" "FSM.obj" "application.obj" "clock.obj" "device.obj" "gpio.obj" "main.obj" "misc.obj" "system.obj" "timer.obj" "watchdog.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
