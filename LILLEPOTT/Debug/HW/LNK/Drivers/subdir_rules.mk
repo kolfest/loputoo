@@ -1,0 +1,20 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Each subdirectory must supply rules for building sources it contributes
+HW/LNK/Drivers/gpio.obj: ../HW/LNK/Drivers/gpio.c $(GEN_OPTS) | $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: MSP430 Compiler'
+	"C:/ti/ccsv6/tools/compiler/msp430_15.12.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv6/ccs_base/msp430/include" --include_path="C:/Users/Karl/workspace_v6_2/LILLEPOTT/HW/LNK/Drivers" --include_path="C:/Users/Karl/workspace_v6_2/LILLEPOTT/HW/LNK/Config" --include_path="C:/Users/Karl/workspace_v6_2/LILLEPOTT/HW/LNK/LNK" --include_path="C:/Users/Karl/workspace_v6_2/LILLEPOTT/HW/LNK/Drivers/Communication" --include_path="C:/Users/Karl/workspace_v6_2/LILLEPOTT/HW/LNK/Drivers/Communication" --include_path="C:/Users/Karl/workspace_v6_2/LILLEPOTT/LOGIC" --include_path="C:/Users/Karl/workspace_v6_2/LILLEPOTT/MCU" --include_path="C:/Users/Karl/workspace_v6_2/LILLEPOTT/HW" --include_path="C:/ti/ccsv6/tools/compiler/msp430_15.12.3.LTS/include" --advice:power=all -g --define=__MSP430G2553__ --diag_warning=225 --diag_wrap=off --display_error_number --printf_support=minimal --preproc_with_compile --preproc_dependency="HW/LNK/Drivers/gpio.d" --obj_directory="HW/LNK/Drivers" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+HW/LNK/Drivers/system.obj: ../HW/LNK/Drivers/system.c $(GEN_OPTS) | $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: MSP430 Compiler'
+	"C:/ti/ccsv6/tools/compiler/msp430_15.12.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv6/ccs_base/msp430/include" --include_path="C:/Users/Karl/workspace_v6_2/LILLEPOTT/HW/LNK/Drivers" --include_path="C:/Users/Karl/workspace_v6_2/LILLEPOTT/HW/LNK/Config" --include_path="C:/Users/Karl/workspace_v6_2/LILLEPOTT/HW/LNK/LNK" --include_path="C:/Users/Karl/workspace_v6_2/LILLEPOTT/HW/LNK/Drivers/Communication" --include_path="C:/Users/Karl/workspace_v6_2/LILLEPOTT/HW/LNK/Drivers/Communication" --include_path="C:/Users/Karl/workspace_v6_2/LILLEPOTT/LOGIC" --include_path="C:/Users/Karl/workspace_v6_2/LILLEPOTT/MCU" --include_path="C:/Users/Karl/workspace_v6_2/LILLEPOTT/HW" --include_path="C:/ti/ccsv6/tools/compiler/msp430_15.12.3.LTS/include" --advice:power=all -g --define=__MSP430G2553__ --diag_warning=225 --diag_wrap=off --display_error_number --printf_support=minimal --preproc_with_compile --preproc_dependency="HW/LNK/Drivers/system.d" --obj_directory="HW/LNK/Drivers" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

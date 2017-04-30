@@ -10,17 +10,19 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./ADC.obj" \
-"./FSM.obj" \
-"./application.obj" \
-"./clock.obj" \
-"./device.obj" \
-"./gpio.obj" \
 "./main.obj" \
-"./misc.obj" \
-"./system.obj" \
-"./timer.obj" \
-"./watchdog.obj" \
+"./HW/ADCMGR.obj" \
+"./HW/LNK/Drivers/Communication/spi.obj" \
+"./HW/LNK/Drivers/Communication/uart.obj" \
+"./HW/LNK/Drivers/gpio.obj" \
+"./HW/LNK/Drivers/system.obj" \
+"./HW/LNK/LNK/radio.obj" \
+"./LOGIC/application.obj" \
+"./MCU/ADC.obj" \
+"./MCU/clock.obj" \
+"./MCU/misc.obj" \
+"./MCU/timer.obj" \
+"./MCU/watchdog.obj" \
 "../lnk_msp430g2553.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
@@ -33,7 +35,19 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
+-include HW/subdir_vars.mk
+-include HW/LNK/Drivers/Communication/subdir_vars.mk
+-include HW/LNK/Drivers/subdir_vars.mk
+-include HW/LNK/LNK/subdir_vars.mk
+-include LOGIC/subdir_vars.mk
+-include MCU/subdir_vars.mk
 -include subdir_rules.mk
+-include HW/subdir_rules.mk
+-include HW/LNK/Drivers/Communication/subdir_rules.mk
+-include HW/LNK/Drivers/subdir_rules.mk
+-include HW/LNK/LNK/subdir_rules.mk
+-include LOGIC/subdir_rules.mk
+-include MCU/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -162,8 +176,8 @@ LILLEPOTT.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "ADC.d" "FSM.d" "application.d" "clock.d" "device.d" "gpio.d" "main.d" "misc.d" "system.d" "timer.d" "watchdog.d" 
-	-$(RM) "ADC.obj" "FSM.obj" "application.obj" "clock.obj" "device.obj" "gpio.obj" "main.obj" "misc.obj" "system.obj" "timer.obj" "watchdog.obj" 
+	-$(RM) "main.d" "HW\ADCMGR.d" "HW\LNK\Drivers\Communication\spi.d" "HW\LNK\Drivers\Communication\uart.d" "HW\LNK\Drivers\gpio.d" "HW\LNK\Drivers\system.d" "HW\LNK\LNK\radio.d" "LOGIC\application.d" "MCU\ADC.d" "MCU\clock.d" "MCU\misc.d" "MCU\timer.d" "MCU\watchdog.d" 
+	-$(RM) "main.obj" "HW\ADCMGR.obj" "HW\LNK\Drivers\Communication\spi.obj" "HW\LNK\Drivers\Communication\uart.obj" "HW\LNK\Drivers\gpio.obj" "HW\LNK\Drivers\system.obj" "HW\LNK\LNK\radio.obj" "LOGIC\application.obj" "MCU\ADC.obj" "MCU\clock.obj" "MCU\misc.obj" "MCU\timer.obj" "MCU\watchdog.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

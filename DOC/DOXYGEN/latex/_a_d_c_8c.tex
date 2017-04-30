@@ -1,0 +1,168 @@
+\hypertarget{_a_d_c_8c}{}\section{C\+:/\+Users/\+Karl/workspace\+\_\+v6\+\_\+2/\+L\+I\+L\+L\+E\+P\+O\+T\+T/\+M\+C\+U/\+A\+DC.c File Reference}
+\label{_a_d_c_8c}\index{C\+:/\+Users/\+Karl/workspace\+\_\+v6\+\_\+2/\+L\+I\+L\+L\+E\+P\+O\+T\+T/\+M\+C\+U/\+A\+D\+C.\+c@{C\+:/\+Users/\+Karl/workspace\+\_\+v6\+\_\+2/\+L\+I\+L\+L\+E\+P\+O\+T\+T/\+M\+C\+U/\+A\+D\+C.\+c}}
+
+
+A\+DC hardware abstraction.  
+
+
+{\ttfamily \#include \char`\"{}A\+D\+C.\+h\char`\"{}}\newline
+Include dependency graph for A\+D\+C.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{_a_d_c_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8 \hyperlink{_a_d_c_8c_ae93705b0a5ab89f5186f70a692b2a8c2}{check\+If\+A\+D\+C\+ON} ()
+\item 
+uint8 \hyperlink{_a_d_c_8c_a7a9ffcb794b1de74776315f4fa2d8fec}{A\+D\+C\+\_\+configure\+A\+DC} (A\+D\+C\+\_\+conf\+Type configuration)
+\item 
+uint8 \hyperlink{_a_d_c_8c_ad9c84f1629e61ef2bbc30f137038020c}{A\+D\+C\+\_\+start\+Conversion} ()
+\item 
+\mbox{\Hypertarget{_a_d_c_8c_a2723c81d42c23dec4015a3fd529e883a}\label{_a_d_c_8c_a2723c81d42c23dec4015a3fd529e883a}} 
+uint8 {\bfseries check\+If\+A\+D\+C\+Busy} ()
+\item 
+void \hyperlink{_a_d_c_8c_a3acd1223e0c1b12976302eac7c0e8585}{A\+D\+C\+\_\+stop\+Conversion} ()
+\item 
+uint16 \hyperlink{_a_d_c_8c_a7a47ff4f410a5d1c613131c65364cddf}{A\+D\+C\+\_\+get\+Conversion\+Result} ()
+\item 
+uint16 \hyperlink{_a_d_c_8c_ae2951f8ad65e5e5e525bb7a04d820bdd}{A\+D\+C\+\_\+measure} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_a_d_c_8c_a71b5a7193ead67fcf8e0cd4ceed97bc9}\label{_a_d_c_8c_a71b5a7193ead67fcf8e0cd4ceed97bc9}} 
+volatile uint16 {\bfseries tulemus} = 0
+\item 
+\mbox{\Hypertarget{_a_d_c_8c_a1863a9b7d7f7cef23ed5487190a2e911}\label{_a_d_c_8c_a1863a9b7d7f7cef23ed5487190a2e911}} 
+const int {\bfseries C\+A\+L\+\_\+\+A\+D\+C\+\_\+25\+T30\+\_\+V} = 444
+\item 
+\mbox{\Hypertarget{_a_d_c_8c_a95d3e43190a02cd9c8588574955cff61}\label{_a_d_c_8c_a95d3e43190a02cd9c8588574955cff61}} 
+const int {\bfseries C\+A\+L\+\_\+\+A\+D\+C\+\_\+25\+T85\+\_\+V} = 527
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+DC hardware abstraction. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_a_d_c_8c_a7a9ffcb794b1de74776315f4fa2d8fec}\label{_a_d_c_8c_a7a9ffcb794b1de74776315f4fa2d8fec}} 
+\index{A\+D\+C.\+c@{A\+D\+C.\+c}!A\+D\+C\+\_\+configure\+A\+DC@{A\+D\+C\+\_\+configure\+A\+DC}}
+\index{A\+D\+C\+\_\+configure\+A\+DC@{A\+D\+C\+\_\+configure\+A\+DC}!A\+D\+C.\+c@{A\+D\+C.\+c}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+configure\+A\+D\+C()}{ADC\_configureADC()}}
+{\footnotesize\ttfamily uint8 A\+D\+C\+\_\+configure\+A\+DC (\begin{DoxyParamCaption}\item[{A\+D\+C\+\_\+conf\+Type}]{configuration }\end{DoxyParamCaption})}
+
+
+
+ Configures A\+DC registers and turns on the A\+DC returns error if refrence not settled, or invalid config, success otherwise 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{ADC_configureADC}}
+\end{DoxyImageNoCaption}
+ \mbox{\Hypertarget{_a_d_c_8c_a7a47ff4f410a5d1c613131c65364cddf}\label{_a_d_c_8c_a7a47ff4f410a5d1c613131c65364cddf}} 
+\index{A\+D\+C.\+c@{A\+D\+C.\+c}!A\+D\+C\+\_\+get\+Conversion\+Result@{A\+D\+C\+\_\+get\+Conversion\+Result}}
+\index{A\+D\+C\+\_\+get\+Conversion\+Result@{A\+D\+C\+\_\+get\+Conversion\+Result}!A\+D\+C.\+c@{A\+D\+C.\+c}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+get\+Conversion\+Result()}{ADC\_getConversionResult()}}
+{\footnotesize\ttfamily uint16 A\+D\+C\+\_\+get\+Conversion\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+
+
+Get A\+DC conversion result from A\+D\+C10\+M\+EM \begin{DoxyReturn}{Returns}
+uint16 result 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{_a_d_c_8c_a7a47ff4f410a5d1c613131c65364cddf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_c_8c_ae2951f8ad65e5e5e525bb7a04d820bdd}\label{_a_d_c_8c_ae2951f8ad65e5e5e525bb7a04d820bdd}} 
+\index{A\+D\+C.\+c@{A\+D\+C.\+c}!A\+D\+C\+\_\+measure@{A\+D\+C\+\_\+measure}}
+\index{A\+D\+C\+\_\+measure@{A\+D\+C\+\_\+measure}!A\+D\+C.\+c@{A\+D\+C.\+c}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+measure()}{ADC\_measure()}}
+{\footnotesize\ttfamily uint16 A\+D\+C\+\_\+measure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+ Measures synchronously, usual call made by A\+D\+C\+M\+GR 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{ADC_MEASURE}}
+\end{DoxyImageNoCaption}
+ Further calibration is needed based on A\+DC configuration \begin{DoxyReturn}{Returns}
+uncalibrated A\+DC conversion result (range\+: 0 to 1023) 
+
+A\+D\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+S\+U\+LT if A\+DC busy or it could not be configured 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{_a_d_c_8c_ae2951f8ad65e5e5e525bb7a04d820bdd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_c_8c_ad9c84f1629e61ef2bbc30f137038020c}\label{_a_d_c_8c_ad9c84f1629e61ef2bbc30f137038020c}} 
+\index{A\+D\+C.\+c@{A\+D\+C.\+c}!A\+D\+C\+\_\+start\+Conversion@{A\+D\+C\+\_\+start\+Conversion}}
+\index{A\+D\+C\+\_\+start\+Conversion@{A\+D\+C\+\_\+start\+Conversion}!A\+D\+C.\+c@{A\+D\+C.\+c}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+start\+Conversion()}{ADC\_startConversion()}}
+{\footnotesize\ttfamily uint8 A\+D\+C\+\_\+start\+Conversion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+ Enables conversion and starts it if A\+D\+C10 is not busy Usually called by A\+D\+C\+\_\+measure 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{ADC_STARTCONVERSION}}
+\end{DoxyImageNoCaption}
+ \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{_a_d_c_8c_ad9c84f1629e61ef2bbc30f137038020c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_c_8c_a3acd1223e0c1b12976302eac7c0e8585}\label{_a_d_c_8c_a3acd1223e0c1b12976302eac7c0e8585}} 
+\index{A\+D\+C.\+c@{A\+D\+C.\+c}!A\+D\+C\+\_\+stop\+Conversion@{A\+D\+C\+\_\+stop\+Conversion}}
+\index{A\+D\+C\+\_\+stop\+Conversion@{A\+D\+C\+\_\+stop\+Conversion}!A\+D\+C.\+c@{A\+D\+C.\+c}}
+\subsubsection{\texorpdfstring{A\+D\+C\+\_\+stop\+Conversion()}{ADC\_stopConversion()}}
+{\footnotesize\ttfamily void A\+D\+C\+\_\+stop\+Conversion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+
+
+Stop A\+DC conversion, disable internal refrence generator and A\+DC core Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{_a_d_c_8c_a3acd1223e0c1b12976302eac7c0e8585_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_c_8c_ae93705b0a5ab89f5186f70a692b2a8c2}\label{_a_d_c_8c_ae93705b0a5ab89f5186f70a692b2a8c2}} 
+\index{A\+D\+C.\+c@{A\+D\+C.\+c}!check\+If\+A\+D\+C\+ON@{check\+If\+A\+D\+C\+ON}}
+\index{check\+If\+A\+D\+C\+ON@{check\+If\+A\+D\+C\+ON}!A\+D\+C.\+c@{A\+D\+C.\+c}}
+\subsubsection{\texorpdfstring{check\+If\+A\+D\+C\+O\+N()}{checkIfADCON()}}
+{\footnotesize\ttfamily uint8 check\+If\+A\+D\+C\+ON (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+
+
+Check if A\+DC core is turned on Called by A\+D\+C\+\_\+configure\+A\+DC (yet to be implemented) \begin{DoxyReturn}{Returns}
+1 if on, 0 otherwise 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{_a_d_c_8c_ae93705b0a5ab89f5186f70a692b2a8c2_cgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,77 @@
+\hypertarget{application_8c}{}\section{C\+:/\+Users/\+Karl/workspace\+\_\+v6\+\_\+2/\+L\+I\+L\+L\+E\+P\+O\+T\+T/\+L\+O\+G\+I\+C/application.c File Reference}
+\label{application_8c}\index{C\+:/\+Users/\+Karl/workspace\+\_\+v6\+\_\+2/\+L\+I\+L\+L\+E\+P\+O\+T\+T/\+L\+O\+G\+I\+C/application.\+c@{C\+:/\+Users/\+Karl/workspace\+\_\+v6\+\_\+2/\+L\+I\+L\+L\+E\+P\+O\+T\+T/\+L\+O\+G\+I\+C/application.\+c}}
+{\ttfamily \#include \char`\"{}application.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+D\+C\+M\+G\+R.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}watchdog.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}network.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}general.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}uart.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}spi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}radio.\+h\char`\"{}}\newline
+Include dependency graph for application.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{application_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{application_8c_a97257889b1e4f85d786e713badeee5e7}\label{application_8c_a97257889b1e4f85d786e713badeee5e7}} 
+void {\bfseries A\+P\+P\+\_\+cyclic} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8 \hyperlink{application_8c_a7b0352c6c7922658ad350ff127b44cde}{payload\+\_\+length} = 0
+\item 
+uint16 \hyperlink{application_8c_a8f839d32a9c0153fd998d475eaffee92}{f\+Measurement} = 1
+\item 
+uint16 \hyperlink{application_8c_a1cb437fba7fe1e38d9fc07c010391d6a}{f\+Cmd\+Added} = 0
+\item 
+uint16 \hyperlink{application_8c_a2d066bfd2fd9251be852c5ba335b6ab8}{f\+Cofig} = 0
+\item 
+\hyperlink{struct_timer_struct}{Timer\+Struct} \hyperlink{application_8c_a0051e14bcefd6a07611d8fee93bf6393}{esimene}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{APP}}
+\end{DoxyImageNoCaption}
+ 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{application_8c_a0051e14bcefd6a07611d8fee93bf6393}\label{application_8c_a0051e14bcefd6a07611d8fee93bf6393}} 
+\index{application.\+c@{application.\+c}!esimene@{esimene}}
+\index{esimene@{esimene}!application.\+c@{application.\+c}}
+\subsubsection{\texorpdfstring{esimene}{esimene}}
+{\footnotesize\ttfamily \hyperlink{struct_timer_struct}{Timer\+Struct} esimene}
+
+timer variable for system work cycle measuring \mbox{\Hypertarget{application_8c_a1cb437fba7fe1e38d9fc07c010391d6a}\label{application_8c_a1cb437fba7fe1e38d9fc07c010391d6a}} 
+\index{application.\+c@{application.\+c}!f\+Cmd\+Added@{f\+Cmd\+Added}}
+\index{f\+Cmd\+Added@{f\+Cmd\+Added}!application.\+c@{application.\+c}}
+\subsubsection{\texorpdfstring{f\+Cmd\+Added}{fCmdAdded}}
+{\footnotesize\ttfamily uint16 f\+Cmd\+Added = 0}
+
+commands added flag \mbox{\Hypertarget{application_8c_a2d066bfd2fd9251be852c5ba335b6ab8}\label{application_8c_a2d066bfd2fd9251be852c5ba335b6ab8}} 
+\index{application.\+c@{application.\+c}!f\+Cofig@{f\+Cofig}}
+\index{f\+Cofig@{f\+Cofig}!application.\+c@{application.\+c}}
+\subsubsection{\texorpdfstring{f\+Cofig}{fCofig}}
+{\footnotesize\ttfamily uint16 f\+Cofig = 0}
+
+periodic configuration flag? not yet used \mbox{\Hypertarget{application_8c_a8f839d32a9c0153fd998d475eaffee92}\label{application_8c_a8f839d32a9c0153fd998d475eaffee92}} 
+\index{application.\+c@{application.\+c}!f\+Measurement@{f\+Measurement}}
+\index{f\+Measurement@{f\+Measurement}!application.\+c@{application.\+c}}
+\subsubsection{\texorpdfstring{f\+Measurement}{fMeasurement}}
+{\footnotesize\ttfamily uint16 f\+Measurement = 1}
+
+measurement flag \mbox{\Hypertarget{application_8c_a7b0352c6c7922658ad350ff127b44cde}\label{application_8c_a7b0352c6c7922658ad350ff127b44cde}} 
+\index{application.\+c@{application.\+c}!payload\+\_\+length@{payload\+\_\+length}}
+\index{payload\+\_\+length@{payload\+\_\+length}!application.\+c@{application.\+c}}
+\subsubsection{\texorpdfstring{payload\+\_\+length}{payload\_length}}
+{\footnotesize\ttfamily uint8 payload\+\_\+length = 0}
+
+temporary received command buffer, global for the ease of debugging 

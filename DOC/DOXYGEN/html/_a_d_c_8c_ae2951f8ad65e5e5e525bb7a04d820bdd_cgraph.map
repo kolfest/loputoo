@@ -1,0 +1,5 @@
+<map id="ADC_measure" name="ADC_measure">
+<area shape="rect" id="node2" href="$_a_d_c_8c.html#ad9c84f1629e61ef2bbc30f137038020c" title="ADC_startConversion" alt="" coords="175,5,320,32"/>
+<area shape="rect" id="node3" href="$_a_d_c_8c.html#a3acd1223e0c1b12976302eac7c0e8585" title="ADC_stopConversion" alt="" coords="175,56,319,83"/>
+<area shape="rect" id="node4" href="$_a_d_c_8c.html#a7a47ff4f410a5d1c613131c65364cddf" title="ADC_getConversionResult" alt="" coords="160,107,335,133"/>
+</map>

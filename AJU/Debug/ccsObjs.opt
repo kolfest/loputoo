@@ -1,0 +1,1 @@
+"./main_lnk.obj" "./LNK/Drivers/Communication/spi.obj" "./LNK/Drivers/Communication/uart.obj" "./LNK/Drivers/system.obj" "./LNK/LNK/radio.obj" "../lnk_msp430g2553.cmd" -llibc.a 
