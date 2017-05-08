@@ -5,11 +5,11 @@
  *      Author: Karl
  */
 
-#ifndef TESTS_MISC_H_
-#define TESTS_MISC_H_
+#ifndef MISC_H_
+#define MISC_H_
 
-#include "LNK/Drivers/system.h"
+//#include "LNK/Drivers/system.h"
+#include "system.h"
+uint8 MISC_checkIsBitSet(uint16 registerr, uint16 position);
 
-uint8 checkIsBitSet(uint16 registerr, uint16 position);
-
-#endif /* TESTS_MISC_H_ */
+#endif /* _MISC_H_ */

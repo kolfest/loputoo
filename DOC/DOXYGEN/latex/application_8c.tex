@@ -1,8 +1,8 @@
 \hypertarget{application_8c}{}\section{C\+:/\+Users/\+Karl/workspace\+\_\+v6\+\_\+2/\+L\+I\+L\+L\+E\+P\+O\+T\+T/\+L\+O\+G\+I\+C/application.c File Reference}
 \label{application_8c}\index{C\+:/\+Users/\+Karl/workspace\+\_\+v6\+\_\+2/\+L\+I\+L\+L\+E\+P\+O\+T\+T/\+L\+O\+G\+I\+C/application.\+c@{C\+:/\+Users/\+Karl/workspace\+\_\+v6\+\_\+2/\+L\+I\+L\+L\+E\+P\+O\+T\+T/\+L\+O\+G\+I\+C/application.\+c}}
+{\ttfamily \#include $<$wdt.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}application.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}A\+D\+C\+M\+G\+R.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}watchdog.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}network.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}general.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}uart.\+h\char`\"{}}\newline
@@ -15,24 +15,37 @@ Include dependency graph for application.\+c\+:\nopagebreak
 \includegraphics[width=350pt]{application_8c__incl}
 \end{center}
 \end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{application_8c_a0ff87ae1f571df4aff2994259eacaebf}\label{application_8c_a0ff87ae1f571df4aff2994259eacaebf}} 
+typedef enum A\+P\+P\+\_\+\+State {\bfseries A\+P\+P\+\_\+\+State}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{application_8c_ae6826746c710462d27cb1a26b914d02b}\label{application_8c_ae6826746c710462d27cb1a26b914d02b}} 
+enum {\bfseries A\+P\+P\+\_\+\+State} \{ \newline
+{\bfseries S\+L\+E\+EP} = 0, 
+{\bfseries I\+N\+IT} = 1, 
+{\bfseries T\+R\+A\+N\+S\+M\+IT} = 2, 
+{\bfseries R\+E\+C\+E\+I\+VE} = 3, 
+\newline
+{\bfseries A\+P\+P\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+T\+E\+MP} = 4, 
+{\bfseries A\+P\+P\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+H\+UM} = 5, 
+{\bfseries A\+P\+P\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+B\+A\+T\+T\+E\+RY} = 6, 
+{\bfseries A\+D\+J\+U\+S\+T\+\_\+\+R\+F\+\_\+\+P\+O\+W\+ER} = 7, 
+\newline
+{\bfseries P\+R\+E\+P\+A\+R\+E\+\_\+\+T\+O\+\_\+\+S\+L\+E\+EP} = 8, 
+{\bfseries P\+A\+R\+S\+E\+\_\+\+H\+E\+A\+D\+E\+RS} = 9, 
+{\bfseries N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+A\+P\+P\+\_\+\+S\+T\+A\+T\+ES}
+ \}
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{application_8c_a97257889b1e4f85d786e713badeee5e7}\label{application_8c_a97257889b1e4f85d786e713badeee5e7}} 
 void {\bfseries A\+P\+P\+\_\+cyclic} ()
-\end{DoxyCompactItemize}
-\subsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-uint8 \hyperlink{application_8c_a7b0352c6c7922658ad350ff127b44cde}{payload\+\_\+length} = 0
-\item 
-uint16 \hyperlink{application_8c_a8f839d32a9c0153fd998d475eaffee92}{f\+Measurement} = 1
-\item 
-uint16 \hyperlink{application_8c_a1cb437fba7fe1e38d9fc07c010391d6a}{f\+Cmd\+Added} = 0
-\item 
-uint16 \hyperlink{application_8c_a2d066bfd2fd9251be852c5ba335b6ab8}{f\+Cofig} = 0
-\item 
-\hyperlink{struct_timer_struct}{Timer\+Struct} \hyperlink{application_8c_a0051e14bcefd6a07611d8fee93bf6393}{esimene}
 \end{DoxyCompactItemize}
 
 
@@ -42,36 +55,3 @@ uint16 \hyperlink{application_8c_a2d066bfd2fd9251be852c5ba335b6ab8}{f\+Cofig} = 
   \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{APP}}
 \end{DoxyImageNoCaption}
  
-
-\subsection{Variable Documentation}
-\mbox{\Hypertarget{application_8c_a0051e14bcefd6a07611d8fee93bf6393}\label{application_8c_a0051e14bcefd6a07611d8fee93bf6393}} 
-\index{application.\+c@{application.\+c}!esimene@{esimene}}
-\index{esimene@{esimene}!application.\+c@{application.\+c}}
-\subsubsection{\texorpdfstring{esimene}{esimene}}
-{\footnotesize\ttfamily \hyperlink{struct_timer_struct}{Timer\+Struct} esimene}
-
-timer variable for system work cycle measuring \mbox{\Hypertarget{application_8c_a1cb437fba7fe1e38d9fc07c010391d6a}\label{application_8c_a1cb437fba7fe1e38d9fc07c010391d6a}} 
-\index{application.\+c@{application.\+c}!f\+Cmd\+Added@{f\+Cmd\+Added}}
-\index{f\+Cmd\+Added@{f\+Cmd\+Added}!application.\+c@{application.\+c}}
-\subsubsection{\texorpdfstring{f\+Cmd\+Added}{fCmdAdded}}
-{\footnotesize\ttfamily uint16 f\+Cmd\+Added = 0}
-
-commands added flag \mbox{\Hypertarget{application_8c_a2d066bfd2fd9251be852c5ba335b6ab8}\label{application_8c_a2d066bfd2fd9251be852c5ba335b6ab8}} 
-\index{application.\+c@{application.\+c}!f\+Cofig@{f\+Cofig}}
-\index{f\+Cofig@{f\+Cofig}!application.\+c@{application.\+c}}
-\subsubsection{\texorpdfstring{f\+Cofig}{fCofig}}
-{\footnotesize\ttfamily uint16 f\+Cofig = 0}
-
-periodic configuration flag? not yet used \mbox{\Hypertarget{application_8c_a8f839d32a9c0153fd998d475eaffee92}\label{application_8c_a8f839d32a9c0153fd998d475eaffee92}} 
-\index{application.\+c@{application.\+c}!f\+Measurement@{f\+Measurement}}
-\index{f\+Measurement@{f\+Measurement}!application.\+c@{application.\+c}}
-\subsubsection{\texorpdfstring{f\+Measurement}{fMeasurement}}
-{\footnotesize\ttfamily uint16 f\+Measurement = 1}
-
-measurement flag \mbox{\Hypertarget{application_8c_a7b0352c6c7922658ad350ff127b44cde}\label{application_8c_a7b0352c6c7922658ad350ff127b44cde}} 
-\index{application.\+c@{application.\+c}!payload\+\_\+length@{payload\+\_\+length}}
-\index{payload\+\_\+length@{payload\+\_\+length}!application.\+c@{application.\+c}}
-\subsubsection{\texorpdfstring{payload\+\_\+length}{payload\_length}}
-{\footnotesize\ttfamily uint8 payload\+\_\+length = 0}
-
-temporary received command buffer, global for the ease of debugging 

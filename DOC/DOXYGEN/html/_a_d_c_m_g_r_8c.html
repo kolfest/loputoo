@@ -98,12 +98,21 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4f0ce8beb7520a59fee601ea188af1f7"><td class="memItemLeft" align="right" valign="top"><a id="a4f0ce8beb7520a59fee601ea188af1f7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ADCMGR_initCmdQueue</b> (<a class="el" href="structcmd_queue__t.html">cmdQueue_t</a> *f, uint8 size)</td></tr>
-<tr class="separator:a4f0ce8beb7520a59fee601ea188af1f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb18432406caada14af982b3fe4cf76f"><td class="memItemLeft" align="right" valign="top"><a id="adb18432406caada14af982b3fe4cf76f"></a>
-commandType&#160;</td><td class="memItemRight" valign="bottom"><b>ADCMGR_readCmdFromQueue</b> (<a class="el" href="structcmd_queue__t.html">cmdQueue_t</a> *f)</td></tr>
-<tr class="separator:adb18432406caada14af982b3fe4cf76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2bce5b4131a4bf18bc45656be658194"><td class="memItemLeft" align="right" valign="top"><a id="af2bce5b4131a4bf18bc45656be658194"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>initCmdQueue</b> (<a class="el" href="structcmd_queue__t.html">cmdQueue_t</a> *f, uint8 size)</td></tr>
+<tr class="separator:af2bce5b4131a4bf18bc45656be658194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d43487506ff4ee2ea6231eb6346d75b"><td class="memItemLeft" align="right" valign="top"><a id="a3d43487506ff4ee2ea6231eb6346d75b"></a>
+commandType&#160;</td><td class="memItemRight" valign="bottom"><b>readCmdFromQueue</b> (<a class="el" href="structcmd_queue__t.html">cmdQueue_t</a> *f)</td></tr>
+<tr class="separator:a3d43487506ff4ee2ea6231eb6346d75b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abea7e84cb7a59993cbea2e6cd5d82c88"><td class="memItemLeft" align="right" valign="top"><a id="abea7e84cb7a59993cbea2e6cd5d82c88"></a>
+uint16&#160;</td><td class="memItemRight" valign="bottom"><b>ADCMGR_getTemp</b> ()</td></tr>
+<tr class="separator:abea7e84cb7a59993cbea2e6cd5d82c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ba925b1b204c109c7904158bab95818"><td class="memItemLeft" align="right" valign="top"><a id="a1ba925b1b204c109c7904158bab95818"></a>
+uint16&#160;</td><td class="memItemRight" valign="bottom"><b>ADCMGR_getHum</b> ()</td></tr>
+<tr class="separator:a1ba925b1b204c109c7904158bab95818"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22264ef7773c4954a850765930385e62"><td class="memItemLeft" align="right" valign="top"><a id="a22264ef7773c4954a850765930385e62"></a>
+uint16&#160;</td><td class="memItemRight" valign="bottom"><b>ADCMGR_getBattery</b> ()</td></tr>
+<tr class="separator:a22264ef7773c4954a850765930385e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a603cd40c54c178b5fb6c5fe36b509dd7"><td class="memItemLeft" align="right" valign="top"><a id="a603cd40c54c178b5fb6c5fe36b509dd7"></a>
 <a class="el" href="structcmd_queue__t.html">cmdQueue_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>ADCMGR_getCmdQueue</b> ()</td></tr>
 <tr class="separator:a603cd40c54c178b5fb6c5fe36b509dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,24 +142,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ADCMGR_cyclic</b> ()<
 Variables</h2></td></tr>
 <tr class="memitem:a1d455a591f2ca8a5ec256ba4841fd82e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_a_d_c_m_g_rcmd_info_type.html">ADCMGRcmdInfoType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>priv_commands</b> []</td></tr>
 <tr class="separator:a1d455a591f2ca8a5ec256ba4841fd82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8240984796eb5fa20412bd9f17f2c7d2"><td class="memItemLeft" align="right" valign="top">uint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_c_m_g_r_8c.html#a8240984796eb5fa20412bd9f17f2c7d2">o</a> = 0</td></tr>
-<tr class="separator:a8240984796eb5fa20412bd9f17f2c7d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a0c2b7648110a315d7d3579861b7a5d"><td class="memItemLeft" align="right" valign="top">uint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_c_m_g_r_8c.html#a4a0c2b7648110a315d7d3579861b7a5d">h</a> = 0</td></tr>
-<tr class="separator:a4a0c2b7648110a315d7d3579861b7a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a0d2e6051336990e141137603fbf24c"><td class="memItemLeft" align="right" valign="top">uint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_c_m_g_r_8c.html#a3a0d2e6051336990e141137603fbf24c">b</a> = 0</td></tr>
-<tr class="separator:a3a0d2e6051336990e141137603fbf24c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24280219f3eecce568688e071d956d83"><td class="memItemLeft" align="right" valign="top">uint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_c_m_g_r_8c.html#a24280219f3eecce568688e071d956d83">TEMP_BUF</a> [10]</td></tr>
-<tr class="separator:a24280219f3eecce568688e071d956d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a223fc4df8dca55246edd4be8eea73230"><td class="memItemLeft" align="right" valign="top">uint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_c_m_g_r_8c.html#a223fc4df8dca55246edd4be8eea73230">HUM_BUF</a> [10]</td></tr>
-<tr class="separator:a223fc4df8dca55246edd4be8eea73230"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff1c8d5313a568276ef7a2f554e93c47"><td class="memItemLeft" align="right" valign="top">uint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_c_m_g_r_8c.html#aff1c8d5313a568276ef7a2f554e93c47">BATTERY_BUF</a> [10]</td></tr>
-<tr class="separator:aff1c8d5313a568276ef7a2f554e93c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f1b00ffac203a5f01857bb30fe9c860"><td class="memItemLeft" align="right" valign="top">uint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_c_m_g_r_8c.html#a6f1b00ffac203a5f01857bb30fe9c860">battery</a> = 0</td></tr>
-<tr class="separator:a6f1b00ffac203a5f01857bb30fe9c860"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a647d81511101efd60a5124ff543e5a38"><td class="memItemLeft" align="right" valign="top">uint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_c_m_g_r_8c.html#a647d81511101efd60a5124ff543e5a38">temperature</a> = 0</td></tr>
-<tr class="separator:a647d81511101efd60a5124ff543e5a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe61fa10cba8f1d10a675102427a1b1f"><td class="memItemLeft" align="right" valign="top">uint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_d_c_m_g_r_8c.html#abe61fa10cba8f1d10a675102427a1b1f">humidity</a> = 0</td></tr>
-<tr class="separator:abe61fa10cba8f1d10a675102427a1b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Documentation for ADCMGR module. </p>
@@ -189,111 +180,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a3a0d2e6051336990e141137603fbf24c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a0d2e6051336990e141137603fbf24c">&#9670;&nbsp;</a></span>b</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16 b = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>variable for result buffer </p>
-
-</div>
-</div>
-<a id="a6f1b00ffac203a5f01857bb30fe9c860"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f1b00ffac203a5f01857bb30fe9c860">&#9670;&nbsp;</a></span>battery</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16 battery = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>currently used result storing variable for battery level measurement </p>
-
-</div>
-</div>
-<a id="aff1c8d5313a568276ef7a2f554e93c47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff1c8d5313a568276ef7a2f554e93c47">&#9670;&nbsp;</a></span>BATTERY_BUF</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16 BATTERY_BUF[10]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>result buffer </p>
-
-</div>
-</div>
-<a id="a4a0c2b7648110a315d7d3579861b7a5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a0c2b7648110a315d7d3579861b7a5d">&#9670;&nbsp;</a></span>h</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16 h = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>variable for result buffer </p>
-
-</div>
-</div>
-<a id="a223fc4df8dca55246edd4be8eea73230"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a223fc4df8dca55246edd4be8eea73230">&#9670;&nbsp;</a></span>HUM_BUF</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16 HUM_BUF[10]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>result buffer </p>
-
-</div>
-</div>
-<a id="abe61fa10cba8f1d10a675102427a1b1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe61fa10cba8f1d10a675102427a1b1f">&#9670;&nbsp;</a></span>humidity</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16 humidity = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>currently used result storing variable for humidity measurement </p>
-
-</div>
-</div>
-<a id="a8240984796eb5fa20412bd9f17f2c7d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8240984796eb5fa20412bd9f17f2c7d2">&#9670;&nbsp;</a></span>o</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16 o = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>variable for result buffer </p>
-
-</div>
-</div>
 <a id="a1d455a591f2ca8a5ec256ba4841fd82e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1d455a591f2ca8a5ec256ba4841fd82e">&#9670;&nbsp;</a></span>priv_commands</h2>
 
@@ -305,37 +191,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">{</div><div class="line"></div><div class="line">  </div><div class="line">    {    0,     ADC_IDLE},</div><div class="line">    {    1,     ADC_TEMP},</div><div class="line">  {    1,       ADC_HUMIDITY},</div><div class="line">    {    1,     ADC_BATTERY},</div><div class="line"></div><div class="line">}</div></div><!-- fragment -->
-</div>
-</div>
-<a id="a24280219f3eecce568688e071d956d83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24280219f3eecce568688e071d956d83">&#9670;&nbsp;</a></span>TEMP_BUF</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16 TEMP_BUF[10]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>result buffer </p>
-
-</div>
-</div>
-<a id="a647d81511101efd60a5124ff543e5a38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a647d81511101efd60a5124ff543e5a38">&#9670;&nbsp;</a></span>temperature</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16 temperature = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>currently used result storing variable for temperature measurement </p>
-
+<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">{</div><div class="line"></div><div class="line">  </div><div class="line">    {    0,     ADC_IDLE},</div><div class="line">    {    1,     ADC_TEMP},</div><div class="line">  {    1,       ADC_HUMIDITY},</div><div class="line">  {    1,       ADC_BATTERY},</div><div class="line"></div><div class="line">}</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

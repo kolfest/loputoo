@@ -9,7 +9,7 @@
  *			Proper buffer for measured values (for async processing?)
  */
 
-/** @file
+/** @file ADCMGR.c
 **	\brief Documentation for ADCMGR module
 @startuml{ADCMGR_STATECHART.png}
 	[*] --> ADCMGR_IDLE
@@ -35,7 +35,7 @@ const ADCMGRcmdInfoType  priv_commands[] =
   /**< MEASURE_IDLE */ 	{    0,  	ADC_IDLE},
   /**< MEASURE_TEMP */	{    1,   	ADC_TEMP},
   /**< MEASURE_HUMIDITY */{    1,   	ADC_HUMIDITY},
-  /**< MEASURE_BATTERY */	{    1,   	ADC_BATTERY},
+  /**< MEASURE_BATTERY */{    1,   	ADC_BATTERY},
 
 };
 
@@ -55,23 +55,47 @@ static cmdQueue_t cmdQueue; /**< commandqueue */
 
 
 void
-ADCMGR_initCmdQueue(cmdQueue_t * f, uint8 size);
+initCmdQueue(cmdQueue_t * f, uint8 size);
 
 commandType
-ADCMGR_readCmdFromQueue(cmdQueue_t * f);
+readCmdFromQueue(cmdQueue_t * f);
 
 
-uint16 o = 0; /**< variable for result buffer */
-uint16 h = 0; /**< variable for result buffer */
-uint16 b = 0; /**< variable for result buffer */
+//uint16 o = 0; /**< variable for result buffer */
+//uint16 h = 0; /**< variable for result buffer */
+//uint16 b = 0; /**< variable for result buffer */
 
-uint16 TEMP_BUF[10]; /**< result buffer */
-uint16 HUM_BUF[10]; /**< result buffer */
-uint16 BATTERY_BUF[10]; /**< result buffer */
+//uint16 TEMP_BUF[10]; /**< result buffer */
+//uint16 HUM_BUF[10]; /**< result buffer */
+//uint16 BATTERY_BUF[10]; /**< result buffer */
 
-uint16 battery = 0; /**< currently used result storing variable for battery level measurement */
-uint16 temperature = 0; /**< currently used result storing variable for temperature measurement */
-uint16 humidity = 0; /**< currently used result storing variable for humidity measurement */
+static uint16 battery = 0; /**< currently used result storing variable for battery level measurement */
+static uint16 temperature = 0; /**< currently used result storing variable for temperature measurement */
+static uint16 humidity = 0; /**< currently used result storing variable for humidity measurement */
+
+uint16
+ADCMGR_getTemp()
+{
+	uint16 temp_temp = temperature;
+	temperature = 0;/*dont know if proper clearing, 0 should be invalid measurement ? */
+	return temp_temp;
+}
+
+uint16
+ADCMGR_getHum()
+{
+	uint16 temp_hum = humidity;
+	humidity = 0;
+	return temp_hum;
+}
+
+uint16
+ADCMGR_getBattery()
+{
+	uint16 temp_bat = battery;
+	battery = 0;
+	return temp_bat;
+}
 
 cmdQueue_t*
 ADCMGR_getCmdQueue()
@@ -115,7 +139,7 @@ ADCMGR_setCmd(commandType cmd)
 }
 
 commandType
-ADCMGR_readCmdFromQueue(cmdQueue_t * f)
+readCmdFromQueue(cmdQueue_t * f)
 /*******************************************************
 ** TODO:
 **
@@ -176,12 +200,12 @@ ADCMGR_init()
 
   currentState = ADCMGR_IDLE;
   cmdData = priv_commands[MEASURE_IDLE];
-  ADCMGR_initCmdQueue(&cmdQueue, 4);
+  initCmdQueue(&cmdQueue, 4);
 
 }
 
 void
-ADCMGR_initCmdQueue(cmdQueue_t *f, uint8 size)
+initCmdQueue(cmdQueue_t *f, uint8 size)
 /*******************************************************
 ** TODO: do proper returns
 ** initializes simple FIFO queue
@@ -213,7 +237,7 @@ ADCMGR_cyclic()
 
    case ADCMGR_IDLE:
 
-    currentCommand = ADCMGR_readCmdFromQueue(&cmdQueue);
+    currentCommand = readCmdFromQueue(&cmdQueue);
      if(currentCommand != COMMAND_QUEUE_EMPTY)
      {
 	 currentState = ADCMGR_CONFIG;
@@ -233,28 +257,28 @@ ADCMGR_cyclic()
 	if(cmdData.ADC_configuration == ADC_TEMP)
 	{
 		temperature = ADC_measure();
-    	o++;
+    	//o++;
 	}
 	if(cmdData.ADC_configuration == ADC_HUMIDITY)
 	{
 		humidity = ADC_measure();
-    	h++;
+    	//h++;
 	}
 	if(cmdData.ADC_configuration == ADC_BATTERY)
 	{
 		battery = ADC_measure();
-    	b++;
+    	//b++;
 	}
     cmdData.sample_size -= 1;
     if (cmdData.sample_size == 0)
        {
-	  currentCommand = ADCMGR_readCmdFromQueue(&cmdQueue);
+	  currentCommand = readCmdFromQueue(&cmdQueue);
 	   if (currentCommand == COMMAND_QUEUE_EMPTY)
 	     {
 		     currentState = ADCMGR_IDLE;
-		     o=0;
-		     b=0;
-		     h=0;
+		     //o=0;
+		     // b=0;
+		     //h=0;
 		     break;
 	     }
 	   currentState = ADCMGR_CONFIG;

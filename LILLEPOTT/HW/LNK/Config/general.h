@@ -13,8 +13,8 @@
 
 
 /********* DEBUG **********/
-#define DEBUG				1		// Send all information to the UART
-#define DEBUG_RF			1		// Send all RF related data to the UART
+#define DEBUG				0		// Send all information to the UART
+#define DEBUG_RF			0		// Send all RF related data to the UART
 #define DEBUG_ERR			0		// Send only error information to the UART
 
 

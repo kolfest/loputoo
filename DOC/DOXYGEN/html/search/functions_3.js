@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['initclk',['initClk',['../clock_8c.html#a1e04b2dfceecd15e53b1b1aec25b5a80',1,'clock.c']]]
+  ['misc_5fcheckisbitset',['MISC_checkIsBitSet',['../misc_8c.html#a98a2b3c213168f5da4220764b6cf6e4d',1,'misc.c']]]
 ];

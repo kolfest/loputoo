@@ -51,9 +51,9 @@
 
 
 // LED definitions
-#define LED1_TOGGLE()			{ LED_PORT_OUT ^= LED1; }
-#define LED1_ON()				{ LED_PORT_OUT |= LED1; }
-#define LED1_OFF()				{ LED_PORT_OUT &= ~LED1; }
+//#define LED1_TOGGLE()			{ LED_PORT_OUT ^= LED1; }
+//#define LED1_ON()				{ LED_PORT_OUT |= LED1; }
+//#define LED1_OFF()				{ LED_PORT_OUT &= ~LED1; }
 
 // System speed settings
 #define SYSTEM_SPEED_1MHZ		1

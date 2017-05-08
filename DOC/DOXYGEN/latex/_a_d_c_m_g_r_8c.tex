@@ -23,11 +23,20 @@ Include dependency graph for A\+D\+C\+M\+G\+R.\+c\+:\nopagebreak
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{_a_d_c_m_g_r_8c_a4f0ce8beb7520a59fee601ea188af1f7}\label{_a_d_c_m_g_r_8c_a4f0ce8beb7520a59fee601ea188af1f7}} 
-void {\bfseries A\+D\+C\+M\+G\+R\+\_\+init\+Cmd\+Queue} (\hyperlink{structcmd_queue__t}{cmd\+Queue\+\_\+t} $\ast$f, uint8 size)
+\mbox{\Hypertarget{_a_d_c_m_g_r_8c_af2bce5b4131a4bf18bc45656be658194}\label{_a_d_c_m_g_r_8c_af2bce5b4131a4bf18bc45656be658194}} 
+void {\bfseries init\+Cmd\+Queue} (\hyperlink{structcmd_queue__t}{cmd\+Queue\+\_\+t} $\ast$f, uint8 size)
 \item 
-\mbox{\Hypertarget{_a_d_c_m_g_r_8c_adb18432406caada14af982b3fe4cf76f}\label{_a_d_c_m_g_r_8c_adb18432406caada14af982b3fe4cf76f}} 
-command\+Type {\bfseries A\+D\+C\+M\+G\+R\+\_\+read\+Cmd\+From\+Queue} (\hyperlink{structcmd_queue__t}{cmd\+Queue\+\_\+t} $\ast$f)
+\mbox{\Hypertarget{_a_d_c_m_g_r_8c_a3d43487506ff4ee2ea6231eb6346d75b}\label{_a_d_c_m_g_r_8c_a3d43487506ff4ee2ea6231eb6346d75b}} 
+command\+Type {\bfseries read\+Cmd\+From\+Queue} (\hyperlink{structcmd_queue__t}{cmd\+Queue\+\_\+t} $\ast$f)
+\item 
+\mbox{\Hypertarget{_a_d_c_m_g_r_8c_abea7e84cb7a59993cbea2e6cd5d82c88}\label{_a_d_c_m_g_r_8c_abea7e84cb7a59993cbea2e6cd5d82c88}} 
+uint16 {\bfseries A\+D\+C\+M\+G\+R\+\_\+get\+Temp} ()
+\item 
+\mbox{\Hypertarget{_a_d_c_m_g_r_8c_a1ba925b1b204c109c7904158bab95818}\label{_a_d_c_m_g_r_8c_a1ba925b1b204c109c7904158bab95818}} 
+uint16 {\bfseries A\+D\+C\+M\+G\+R\+\_\+get\+Hum} ()
+\item 
+\mbox{\Hypertarget{_a_d_c_m_g_r_8c_a22264ef7773c4954a850765930385e62}\label{_a_d_c_m_g_r_8c_a22264ef7773c4954a850765930385e62}} 
+uint16 {\bfseries A\+D\+C\+M\+G\+R\+\_\+get\+Battery} ()
 \item 
 \mbox{\Hypertarget{_a_d_c_m_g_r_8c_a603cd40c54c178b5fb6c5fe36b509dd7}\label{_a_d_c_m_g_r_8c_a603cd40c54c178b5fb6c5fe36b509dd7}} 
 \hyperlink{structcmd_queue__t}{cmd\+Queue\+\_\+t} $\ast$ {\bfseries A\+D\+C\+M\+G\+R\+\_\+get\+Cmd\+Queue} ()
@@ -57,24 +66,6 @@ void {\bfseries A\+D\+C\+M\+G\+R\+\_\+cyclic} ()
 \begin{DoxyCompactItemize}
 \item 
 const \hyperlink{struct_a_d_c_m_g_rcmd_info_type}{A\+D\+C\+M\+G\+Rcmd\+Info\+Type} {\bfseries priv\+\_\+commands} \mbox{[}$\,$\mbox{]}
-\item 
-uint16 \hyperlink{_a_d_c_m_g_r_8c_a8240984796eb5fa20412bd9f17f2c7d2}{o} = 0
-\item 
-uint16 \hyperlink{_a_d_c_m_g_r_8c_a4a0c2b7648110a315d7d3579861b7a5d}{h} = 0
-\item 
-uint16 \hyperlink{_a_d_c_m_g_r_8c_a3a0d2e6051336990e141137603fbf24c}{b} = 0
-\item 
-uint16 \hyperlink{_a_d_c_m_g_r_8c_a24280219f3eecce568688e071d956d83}{T\+E\+M\+P\+\_\+\+B\+UF} \mbox{[}10\mbox{]}
-\item 
-uint16 \hyperlink{_a_d_c_m_g_r_8c_a223fc4df8dca55246edd4be8eea73230}{H\+U\+M\+\_\+\+B\+UF} \mbox{[}10\mbox{]}
-\item 
-uint16 \hyperlink{_a_d_c_m_g_r_8c_aff1c8d5313a568276ef7a2f554e93c47}{B\+A\+T\+T\+E\+R\+Y\+\_\+\+B\+UF} \mbox{[}10\mbox{]}
-\item 
-uint16 \hyperlink{_a_d_c_m_g_r_8c_a6f1b00ffac203a5f01857bb30fe9c860}{battery} = 0
-\item 
-uint16 \hyperlink{_a_d_c_m_g_r_8c_a647d81511101efd60a5124ff543e5a38}{temperature} = 0
-\item 
-uint16 \hyperlink{_a_d_c_m_g_r_8c_abe61fa10cba8f1d10a675102427a1b1f}{humidity} = 0
 \end{DoxyCompactItemize}
 
 
@@ -103,49 +94,7 @@ command buffer size \mbox{\Hypertarget{_a_d_c_m_g_r_8c_a586e570c38cfcbc5c9ba0efe
 number of commands for A\+D\+C\+M\+GR 
 
 \subsection{Variable Documentation}
-\mbox{\Hypertarget{_a_d_c_m_g_r_8c_a3a0d2e6051336990e141137603fbf24c}\label{_a_d_c_m_g_r_8c_a3a0d2e6051336990e141137603fbf24c}} 
-\index{A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}!b@{b}}
-\index{b@{b}!A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}}
-\subsubsection{\texorpdfstring{b}{b}}
-{\footnotesize\ttfamily uint16 b = 0}
-
-variable for result buffer \mbox{\Hypertarget{_a_d_c_m_g_r_8c_a6f1b00ffac203a5f01857bb30fe9c860}\label{_a_d_c_m_g_r_8c_a6f1b00ffac203a5f01857bb30fe9c860}} 
-\index{A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}!battery@{battery}}
-\index{battery@{battery}!A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}}
-\subsubsection{\texorpdfstring{battery}{battery}}
-{\footnotesize\ttfamily uint16 battery = 0}
-
-currently used result storing variable for battery level measurement \mbox{\Hypertarget{_a_d_c_m_g_r_8c_aff1c8d5313a568276ef7a2f554e93c47}\label{_a_d_c_m_g_r_8c_aff1c8d5313a568276ef7a2f554e93c47}} 
-\index{A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}!B\+A\+T\+T\+E\+R\+Y\+\_\+\+B\+UF@{B\+A\+T\+T\+E\+R\+Y\+\_\+\+B\+UF}}
-\index{B\+A\+T\+T\+E\+R\+Y\+\_\+\+B\+UF@{B\+A\+T\+T\+E\+R\+Y\+\_\+\+B\+UF}!A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}}
-\subsubsection{\texorpdfstring{B\+A\+T\+T\+E\+R\+Y\+\_\+\+B\+UF}{BATTERY\_BUF}}
-{\footnotesize\ttfamily uint16 B\+A\+T\+T\+E\+R\+Y\+\_\+\+B\+UF\mbox{[}10\mbox{]}}
-
-result buffer \mbox{\Hypertarget{_a_d_c_m_g_r_8c_a4a0c2b7648110a315d7d3579861b7a5d}\label{_a_d_c_m_g_r_8c_a4a0c2b7648110a315d7d3579861b7a5d}} 
-\index{A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}!h@{h}}
-\index{h@{h}!A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}}
-\subsubsection{\texorpdfstring{h}{h}}
-{\footnotesize\ttfamily uint16 h = 0}
-
-variable for result buffer \mbox{\Hypertarget{_a_d_c_m_g_r_8c_a223fc4df8dca55246edd4be8eea73230}\label{_a_d_c_m_g_r_8c_a223fc4df8dca55246edd4be8eea73230}} 
-\index{A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}!H\+U\+M\+\_\+\+B\+UF@{H\+U\+M\+\_\+\+B\+UF}}
-\index{H\+U\+M\+\_\+\+B\+UF@{H\+U\+M\+\_\+\+B\+UF}!A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}}
-\subsubsection{\texorpdfstring{H\+U\+M\+\_\+\+B\+UF}{HUM\_BUF}}
-{\footnotesize\ttfamily uint16 H\+U\+M\+\_\+\+B\+UF\mbox{[}10\mbox{]}}
-
-result buffer \mbox{\Hypertarget{_a_d_c_m_g_r_8c_abe61fa10cba8f1d10a675102427a1b1f}\label{_a_d_c_m_g_r_8c_abe61fa10cba8f1d10a675102427a1b1f}} 
-\index{A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}!humidity@{humidity}}
-\index{humidity@{humidity}!A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}}
-\subsubsection{\texorpdfstring{humidity}{humidity}}
-{\footnotesize\ttfamily uint16 humidity = 0}
-
-currently used result storing variable for humidity measurement \mbox{\Hypertarget{_a_d_c_m_g_r_8c_a8240984796eb5fa20412bd9f17f2c7d2}\label{_a_d_c_m_g_r_8c_a8240984796eb5fa20412bd9f17f2c7d2}} 
-\index{A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}!o@{o}}
-\index{o@{o}!A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}}
-\subsubsection{\texorpdfstring{o}{o}}
-{\footnotesize\ttfamily uint16 o = 0}
-
-variable for result buffer \mbox{\Hypertarget{_a_d_c_m_g_r_8c_a1d455a591f2ca8a5ec256ba4841fd82e}\label{_a_d_c_m_g_r_8c_a1d455a591f2ca8a5ec256ba4841fd82e}} 
+\mbox{\Hypertarget{_a_d_c_m_g_r_8c_a1d455a591f2ca8a5ec256ba4841fd82e}\label{_a_d_c_m_g_r_8c_a1d455a591f2ca8a5ec256ba4841fd82e}} 
 \index{A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}!priv\+\_\+commands@{priv\+\_\+commands}}
 \index{priv\+\_\+commands@{priv\+\_\+commands}!A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}}
 \subsubsection{\texorpdfstring{priv\+\_\+commands}{priv\_commands}}
@@ -160,20 +109,7 @@ variable for result buffer \mbox{\Hypertarget{_a_d_c_m_g_r_8c_a1d455a591f2ca8a5e
     \{    0,     ADC\_IDLE\},
     \{    1,     ADC\_TEMP\},
   \{    1,       ADC\_HUMIDITY\},
-    \{    1,     ADC\_BATTERY\},
+  \{    1,       ADC\_BATTERY\},
 
 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{_a_d_c_m_g_r_8c_a24280219f3eecce568688e071d956d83}\label{_a_d_c_m_g_r_8c_a24280219f3eecce568688e071d956d83}} 
-\index{A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}!T\+E\+M\+P\+\_\+\+B\+UF@{T\+E\+M\+P\+\_\+\+B\+UF}}
-\index{T\+E\+M\+P\+\_\+\+B\+UF@{T\+E\+M\+P\+\_\+\+B\+UF}!A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}}
-\subsubsection{\texorpdfstring{T\+E\+M\+P\+\_\+\+B\+UF}{TEMP\_BUF}}
-{\footnotesize\ttfamily uint16 T\+E\+M\+P\+\_\+\+B\+UF\mbox{[}10\mbox{]}}
-
-result buffer \mbox{\Hypertarget{_a_d_c_m_g_r_8c_a647d81511101efd60a5124ff543e5a38}\label{_a_d_c_m_g_r_8c_a647d81511101efd60a5124ff543e5a38}} 
-\index{A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}!temperature@{temperature}}
-\index{temperature@{temperature}!A\+D\+C\+M\+G\+R.\+c@{A\+D\+C\+M\+G\+R.\+c}}
-\subsubsection{\texorpdfstring{temperature}{temperature}}
-{\footnotesize\ttfamily uint16 temperature = 0}
-
-currently used result storing variable for temperature measurement 

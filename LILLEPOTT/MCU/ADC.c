@@ -5,10 +5,10 @@
  *      Author: Karl
  *      TODO:
  *		*ADC_IDLE is not covered in ADC_configureADC();
- *      implement isADC busy check for startconversion and adcconf, maybe remove startconversion isadcbusy check alltogether and do it in config
+ *
  */
 
-/** @file
+/** @file ADC.c
 **	\brief ADC hardware abstraction
 **
 **
@@ -16,11 +16,14 @@
 **/
 
 #include "ADC.h"
+static volatile uint16 tulemus = 0;
 
-volatile uint16 tulemus = 0;
+uint8 startConversion();
 
-const int CAL_ADC_25T30_V = 444; /*calibration constant */
-const int CAL_ADC_25T85_V = 527; /*calibration constant */
+static uint16
+getConversionResult();
+
+static void stopConversion();
 
 uint8
 checkIfADCON()
@@ -32,7 +35,7 @@ checkIfADCON()
 ********************************************************/
 {
 
-  return checkIsBitSet(ADC10CTL0, 4);
+  return MISC_checkIsBitSet(ADC10CTL0, 4);
 
 }
 
@@ -52,11 +55,11 @@ uint8
 	 ADC -> ADC: configure ADC
 	ADC_MGR <-- ADC: ADC_CONFIG_FAILURE
 	note left
-		Configuration found
+		Configuration not found
 	end note
 @enduml
 ********************************************************/
-ADC_configureADC(ADC_confType configuration)
+ADC_configureADC(ADC_ConfType configuration)
 {
 	ADC10CTL0 = SREF_1 + ADC10SHT_3 + REFON + REF2_5V + ADC10ON; /*VR+ = VREF+ and VR- = VSS, maximum sample-and-hold time, Turn internal refrence generator on, refrence voltage 2.5V */
 	/* TODO: checkIfADCON functionality */
@@ -69,7 +72,7 @@ ADC_configureADC(ADC_confType configuration)
 
 
 		    case ADC_HUMIDITY:
-			    ADC10CTL1 = INCH_10 + ADC10DIV_0; /* select A0 */
+			    ADC10CTL1 = INCH_1 + ADC10DIV_0; /* select A0 */
 			    return ADC_CONFIG_SUCCESS;
 
 
@@ -85,12 +88,12 @@ ADC_configureADC(ADC_confType configuration)
 }
 
 uint8
-ADC_startConversion()
+startConversion()
 /*!******************************************************
 ** Enables conversion and starts it if ADC10 is not busy
 ** Usually called by ADC_measure
-@startuml{ADC_STARTCONVERSION.png}
-	ADC_measure -> ADC: ADC_startConversion
+@startuml{startConversion.png}
+	ADC_measure -> ADC: startConversion
 	note right
 		ADC not busy
 	end note
@@ -98,7 +101,7 @@ ADC_startConversion()
 	ADC <-- ADC: 0
 	ADC_measure <-- ADC: ADC_INIT_SUCCESS
 
-	ADC_measure -> ADC: ADC_startConversion
+	ADC_measure -> ADC: startConversion
 	note right
 		ADC  busy
 	end note
@@ -122,12 +125,12 @@ ADC_startConversion()
 uint8 checkIfADCBusy()
 {
 
-  return checkIsBitSet(ADC10CTL1, 0);
+  return MISC_checkIsBitSet(ADC10CTL1, 0);
 
 }
 
 void
-ADC_stopConversion()
+stopConversion()
 /*!******************************************************
 **
 ** Stop ADC conversion, disable internal refrence generator and ADC core
@@ -142,7 +145,7 @@ ADC_stopConversion()
 
 
 uint16
-ADC_getConversionResult()
+getConversionResult()
 /*!******************************************************
 **
 ** Get ADC conversion result from ADC10MEM
@@ -164,42 +167,43 @@ ADC_measure()
 	note right
 		ADC not busy
 	end note
-	ADC -> ADC: ADC_startConversion
+	ADC -> ADC: startConversion
 	ADC <--  ADC: ADC_INIT_SUCCESS
 	... Delay ...
-	ADC -> ADC: ADC_stopConversion
-	ADC -> ADC: ADC_getConversionResult
+	ADC -> ADC: stopConversion
+	ADC -> ADC: getConversionResult
 	ADC_MGR <--  ADC: result
 
 	ADC_MGR -> ADC: ADC_measure
 	note right
 		ADC busy
 	end note
-	ADC -> ADC: ADC_startConversion
+	ADC -> ADC: startConversion
 	ADC <--  ADC: ADC_BUSY
 	loop 10 times
-		ADC -> ADC: ADC_startConversion
+		ADC -> ADC: startConversion
 	end
 	ADC <--  ADC: ADC_INIT_SUCCESS
 	... Delay ...
-		ADC -> ADC: ADC_stopConversion
-	ADC -> ADC: ADC_getConversionResult
+		ADC -> ADC: stopConversion
+	ADC -> ADC: getConversionResult
 	ADC_MGR <--  ADC: result
 
 @enduml
 **Further calibration is needed based on ADC configuration
+**Does a single measurement based on configuration
 **\return uncalibrated ADC conversion result (range: 0 to 1023)
 **\return ADC_INVALID_CONVERSION_RESULT if ADC busy or it could not be configured
 ********************************************************/
 {
 
-  //while(ADC_startConversion() != ADC_INIT_SUCCESS); /* if ADC busy try again */
-	ADC_startConversion();
-  __delay_cycles(20); /* TODO: non software delay */
+  //while(startConversion() != ADC_INIT_SUCCESS); /* if ADC busy try again */
+  startConversion();
+  __delay_cycles(20); /* TODO: non software delay, 20us */
 
-  ADC_stopConversion();
+  stopConversion();
 
-  volatile uint16 result = ADC_getConversionResult();
+  volatile uint16 result = getConversionResult();
 
   return result;
 

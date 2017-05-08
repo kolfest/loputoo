@@ -10,6 +10,6 @@
 #include "LNK/Drivers/system.h"
 
 void
-initClk ();
+CLK_initClk();
 
 #endif /* CLOCK_H_ */

@@ -3,9 +3,9 @@
  *	        Include section					                       		   					       *
  ***************************************************************************************************/
 
+#include <wdt.h>
 #include "ADCMGR.h"
 #include "clock.h"
-#include "watchdog.h"
 #include "system.h"
 #include "timer.h"
 #include "application.h"
@@ -29,7 +29,7 @@ void main(void)
 	GPIO_setup();
 	System_Init(&error);
 	__enable_interrupt();
-	initClk();
+	CLK_initClk();
 	ADCMGR_init();
 
 	while (1)

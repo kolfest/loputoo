@@ -14,7 +14,7 @@
 #include "misc.h"
 
 uint8
-checkIsBitSet(
+MISC_checkIsBitSet(
 				uint16 registerr, /**< System register to be checked*/
 				uint16 position) /**< bit to be checked, LSB is 0th bit*/
 /*!******************************************************

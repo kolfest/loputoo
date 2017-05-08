@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['watchdog_2ec',['watchdog.c',['../watchdog_8c.html',1,'']]]
+  ['wdt_2ec',['wdt.c',['../wdt_8c.html',1,'']]]
 ];

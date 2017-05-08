@@ -29,9 +29,6 @@ extern uint16 TEMP_BUF[10];
 extern uint16 HUM_BUF[10];
 extern uint16 BATTERY_BUF[10];
 
-extern uint16 battery;
-extern uint16 temperature;
-extern uint16 humidity;
 
 typedef enum ADCMGR_state
 {
@@ -58,7 +55,7 @@ typedef struct
 {
 
  uint8 sample_size;
- ADC_confType ADC_configuration;
+ ADC_ConfType ADC_configuration;
 
 }ADCMGRcmdInfoType;
 
@@ -71,6 +68,15 @@ typedef struct {
     uint8 size;
 
 } cmdQueue_t;
+
+uint16
+ADCMGR_getTemp();
+
+uint16
+ADCMGR_getHum();
+
+uint16
+ADCMGR_getBattery();
 
 uint8
 ADCMGR_addCmdToQueue (cmdQueue_t * f, commandType command);

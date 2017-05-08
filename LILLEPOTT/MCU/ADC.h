@@ -9,6 +9,7 @@
 #define CONVERTER_H_
 
 #include "LNK/Drivers/system.h"
+
 #include "misc.h"
 
 #define ADC_INIT_SUCCESS 0
@@ -20,13 +21,13 @@
 extern uint8 configuration;
 uint8 tuli;
 
-typedef enum ADC_confType
+typedef enum ADC_ConfType
 {
   ADC_IDLE = 0,
   ADC_TEMP = 1,
   ADC_HUMIDITY = 2,
   ADC_BATTERY = 3
-} ADC_confType;
+} ADC_ConfType;
 
 enum
 {
@@ -42,22 +43,14 @@ enum
   NUMBER_OF_ADC_CONFIG_STATES
 } commandType2;
 
-float ADC_calibrateResult(uint16 *result);
 
 uint8 checkIfADCBusy();
 
 uint8 checkIfADCON();
 
-uint8 ADC_configureADC(ADC_confType configuration);
+uint8 ADC_configureADC(ADC_ConfType configuration);
 
 uint16 ADC_measure();
-
-uint8 ADC_startConversion();
-
-uint16
-ADC_getConversionResult();
-
-void ADC_stopConversion();
 
 
 void ADC_cyclic();

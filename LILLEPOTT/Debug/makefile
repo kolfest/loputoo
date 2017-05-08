@@ -22,7 +22,7 @@ ORDERED_OBJS += \
 "./MCU/clock.obj" \
 "./MCU/misc.obj" \
 "./MCU/timer.obj" \
-"./MCU/watchdog.obj" \
+"./MCU/wdt.obj" \
 "../lnk_msp430g2553.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
@@ -176,8 +176,8 @@ LILLEPOTT.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "main.d" "HW\ADCMGR.d" "HW\LNK\Drivers\Communication\spi.d" "HW\LNK\Drivers\Communication\uart.d" "HW\LNK\Drivers\gpio.d" "HW\LNK\Drivers\system.d" "HW\LNK\LNK\radio.d" "LOGIC\application.d" "MCU\ADC.d" "MCU\clock.d" "MCU\misc.d" "MCU\timer.d" "MCU\watchdog.d" 
-	-$(RM) "main.obj" "HW\ADCMGR.obj" "HW\LNK\Drivers\Communication\spi.obj" "HW\LNK\Drivers\Communication\uart.obj" "HW\LNK\Drivers\gpio.obj" "HW\LNK\Drivers\system.obj" "HW\LNK\LNK\radio.obj" "LOGIC\application.obj" "MCU\ADC.obj" "MCU\clock.obj" "MCU\misc.obj" "MCU\timer.obj" "MCU\watchdog.obj" 
+	-$(RM) "main.d" "HW\ADCMGR.d" "HW\LNK\Drivers\Communication\spi.d" "HW\LNK\Drivers\Communication\uart.d" "HW\LNK\Drivers\gpio.d" "HW\LNK\Drivers\system.d" "HW\LNK\LNK\radio.d" "LOGIC\application.d" "MCU\ADC.d" "MCU\clock.d" "MCU\misc.d" "MCU\timer.d" "MCU\wdt.d" 
+	-$(RM) "main.obj" "HW\ADCMGR.obj" "HW\LNK\Drivers\Communication\spi.obj" "HW\LNK\Drivers\Communication\uart.obj" "HW\LNK\Drivers\gpio.obj" "HW\LNK\Drivers\system.obj" "HW\LNK\LNK\radio.obj" "LOGIC\application.obj" "MCU\ADC.obj" "MCU\clock.obj" "MCU\misc.obj" "MCU\timer.obj" "MCU\wdt.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

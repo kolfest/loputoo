@@ -17,7 +17,6 @@ APP_cyclic();
  *	        Global Variable section  				                            				   *
  ***************************************************************************************************/
 uint8 error;
-extern uint8 payload_length;
 uint8 cntr;
-extern TimerStruct esimene;
+
 #endif /* APPLICATION_H_ */

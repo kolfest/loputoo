@@ -27,8 +27,8 @@
 // *************************************************************************************************
 void UART_Init(void) {
 	// Define UART ports
-	UART_PORT_SEL = UART_RXD + UART_TXD;   		// P1.1 = RXD, P1.2=TXD
-	UART_PORT_SEL2 = UART_RXD + UART_TXD;     	// P1.1 = RXD, P1.2=TXD
+	//UART_PORT_SEL = UART_RXD + UART_TXD;   		// P1.1 = RXD, P1.2=TXD
+	//UART_PORT_SEL2 = UART_RXD + UART_TXD;     	// P1.1 = RXD, P1.2=TXD
 
 	// Configure UART
 	UCA0CTL1 |= UCSSEL_2;                   	// SMCLK

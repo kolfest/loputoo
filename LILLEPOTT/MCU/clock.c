@@ -15,9 +15,9 @@
 
 #include "clock.h"
 void
-initClk ()
+CLK_initClk ()
 /*!* Basic clock initialization
- **  After a PUC, the basic clock module+ uses DCOCLK for MCLK
+ **  Configures ACLK for watchdog module, other clocks init in MRF_LNK System_Init function
  **
  **
  ********************************************************/

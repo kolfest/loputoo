@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['h',['h',['../_a_d_c_m_g_r_8c.html#a4a0c2b7648110a315d7d3579861b7a5d',1,'ADCMGR.c']]],
-  ['hum_5fbuf',['HUM_BUF',['../_a_d_c_m_g_r_8c.html#a223fc4df8dca55246edd4be8eea73230',1,'ADCMGR.c']]],
-  ['humidity',['humidity',['../_a_d_c_m_g_r_8c.html#abe61fa10cba8f1d10a675102427a1b1f',1,'ADCMGR.c']]]
+  ['wdt_2ec',['wdt.c',['../wdt_8c.html',1,'']]],
+  ['wdt_5fconfigure',['WDT_configure',['../wdt_8c.html#a3326de6d0c209742242f25167d0894fb',1,'wdt.c']]],
+  ['wdt_5fgetcurrentperiod',['WDT_getCurrentPeriod',['../wdt_8c.html#a1ec95cdd432b1667b6d2ead9802ab869',1,'wdt.c']]],
+  ['wdt_5fsetwatchdog',['WDT_setWatchdog',['../wdt_8c.html#a1ca55bccb8a02d85f97804444f99afa0',1,'wdt.c']]],
+  ['wdtcounter',['wdtCounter',['../wdt_8c.html#a3312a478f58f673bdeb781a8f34b3249',1,'wdt.c']]],
+  ['wdtcurrentperiod',['wdtCurrentPeriod',['../wdt_8c.html#acd668f83c1bcd64c726a03065168278a',1,'wdt.c']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['esimene',['esimene',['../application_8c.html#a0051e14bcefd6a07611d8fee93bf6393',1,'application.c']]]
+  ['misc_2ec',['misc.c',['../misc_8c.html',1,'']]],
+  ['misc_5fcheckisbitset',['MISC_checkIsBitSet',['../misc_8c.html#a98a2b3c213168f5da4220764b6cf6e4d',1,'misc.c']]]
 ];

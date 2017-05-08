@@ -55,12 +55,12 @@
 
 
 /******** UART *************/
-#define UART_PORT_DIR		(P1DIR)
-#define UART_PORT_SEL      	(P1SEL)
-#define UART_PORT_SEL2      (P1SEL2)
+//#define UART_PORT_DIR		(P1DIR)
+//#define UART_PORT_SEL      	(P1SEL)
+//#define UART_PORT_SEL2      (P1SEL2)
 
-#define UART_RXD			BIT1	// P1.1
-#define UART_TXD			BIT2	// P1.2
+//#define UART_RXD			BIT1	// P1.1
+//#define UART_TXD			BIT2	// P1.2
 
 
 /******** DHT *************/

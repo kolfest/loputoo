@@ -14,7 +14,7 @@
 
 // Node address
 #if (TRANSMITTER)
-	#define ADDR_LOCAL		0x01	// Local Node address
+	#define ADDR_LOCAL		0x02	// Local Node address
 	#define ADDR_REMOTE		0x03	// Receiver address
 #elif (RECEIVER)
 	#define ADDR_LOCAL		0x03
