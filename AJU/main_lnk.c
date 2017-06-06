@@ -62,7 +62,7 @@ end
 /***************************************************************************************************
  *	        Prototype section					                       							   *
  ***************************************************************************************************/
-
+crc MISC_crc(uint8 const message[], int nBytes);
 
 /***************************************************************************************************
  *	        Global Variable section  				                            				   *
@@ -70,8 +70,10 @@ end
 uint8 error;
 uint8 payload_length;
 uint8 cntr;
-
-
+typedef uint16 crc;
+#define POLYNOMIAL 0xBAAD
+#define WIDTH  (8 * sizeof(crc))
+#define TOPBIT (1 << (WIDTH - 1))
 /***************************************************************************************************
  *         Main section                                                                            *
  ***************************************************************************************************/
@@ -129,22 +131,25 @@ void main(void) {
 			/*parse received packet's address and return rssi info */
 			uint8 addr_offset = 2; /* offset index for addr parsing */
 			uint8 remote_addr = 0; /* received message's note's source address */
-
-			rssi_env = Radio_Get_RSSI(); /* Get RSSI reading (channel noise?) */
-			remote_addr = RxPacket[addr_offset];
-			TxPacket[payload_length++] = PKCT_TYPE_RSSI;
-			TxPacket[payload_length++] = rssi_rx;
-			TxPacket[payload_length++] = rssi_env;
-			Radio_Tx(TxPacket, payload_length, remote_addr, &error);
-
-			/*propagate packet to the PI, not done yet */
-			 /*
-			UART_Send_Data("\r\nReceiving:");
-			for (cntr = 0; cntr < len; ++cntr) {
-				UART0_Send_ByteToChar(&(RxPacket[cntr]));
+			if(MISC_crc(RxPacket, sizeof(RxPacket)) == 0)
+			{
+				rssi_env = Radio_Get_RSSI(); /* Get RSSI reading (channel noise?) */
+				remote_addr = RxPacket[addr_offset];
+				TxPacket[payload_length++] = PKCT_TYPE_RSSI;
+				TxPacket[payload_length++] = rssi_rx;
+				TxPacket[payload_length++] = rssi_env;
+				uint16 crc = MISC_crc(TxPacket, sizeof(TxPacket));
+				baidid[0] = crc;
+				baidid[1] = (crc >> 8);
+				Radio_Tx(TxPacket, payload_length, remote_addr, &error);
+				TxPacket[payload_length++] = baidid[0];
+				TxPacket[payload_length++] = baidid[1];
+				 
+				for (cntr = 0; cntr < len; ++cntr)
+				{
+					UART0_Send_ByteToChar(&(RxPacket[cntr]));
+				}
 			}
-			*/
-
 			#if (DEBUG_RF)
 				UART_Send_Data("\r\nRSSI env | rx: ");
 				UART0_Send_ByteToChar(&(rssi_env));
@@ -156,3 +161,28 @@ void main(void) {
 #endif	/* RECEIVER */
 
 }		/* END: main */
+
+crc
+MISC_crc(uint8 const message[], int nBytes)
+{
+    crc  remainder = 0;	
+
+    for (int byte = 0; byte < nBytes; ++byte)
+    {
+
+        remainder ^= (message[byte] << (WIDTH - 8));
+        for (uint8 bit = 8; bit > 0; --bit)
+        {
+
+            if (remainder & TOPBIT)
+            {
+                remainder = (remainder << 1) ^ POLYNOMIAL;
+            }
+            else
+            {
+                remainder = (remainder << 1);
+            }
+        }
+    }
+    return (remainder);
+}

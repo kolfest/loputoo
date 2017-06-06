@@ -46,11 +46,12 @@
 #include "ADCMGR.h"
 #include "network.h"
 #include "general.h"
-
+#include "misc.h"
 // Drivers
 #include "uart.h"
 #include "spi.h"
 #include "radio.h"
+
 
 typedef enum APP_State
 {
@@ -68,6 +69,7 @@ typedef enum APP_State
   NUMBER_OF_APP_STATES
 
 }APP_State;
+
 
 static uint8 parsed[3]; /**< temporary received command buffer, global for the ease of debugging */
 static uint8 payload_length = 0; /**< */
@@ -198,12 +200,16 @@ APP_cyclic()
 		}
 		case TRANSMIT:
 		{
-
+			uint8 baidid[2];
 			/* add previous communications' RSSI data to packet, adds zeroes on first system cycle */
 			TxPacket[payload_length++] = PKCT_TYPE_RSSI;
 			TxPacket[payload_length++] = rssi_ENV;
 			TxPacket[payload_length++] = rssi_RX;
-
+			uint16 crc = MISC_crc(TxPacket, sizeof(TxPacket));
+			baidid[0] = crc;
+			baidid[1] = (crc >> 8);
+			TxPacket[payload_length++] = baidid[0];
+			TxPacket[payload_length++] = baidid[1];		
 			/* Send data over radio */
 			Radio_Set_Mode(RADIO_STANDBY);
 			Radio_Tx(TxPacket, payload_length, ADDR_REMOTE, &error);
@@ -228,6 +234,11 @@ APP_cyclic()
 			{ /* No error */
 				//rssi_ENV = Radio_Calculate_RSSI(Radio_Get_RSSI());
 
+				if(MISC_crc(RxPacket, sizeof(RxPacket)) != 0)
+				{	
+					state = PREPARE_TO_SLEEP;
+					break;
+				}
 
 				#if (DEBUG_RF) /* debug */
 					UART_Send_Data("\r\nRSSI env | rx: ");
